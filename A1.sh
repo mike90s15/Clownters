@@ -107,7 +107,7 @@ function banner_menu(){
     sleep 0.1
     printf " ${a1}${a2}05${a3} ${cyan}Consulta de DDD   ${a3}${on}\n"
     sleep 0.1
-    printf "\n ${a1}${red}98${a3} ${cyan}Mue Grupo         ${a3}${on}\n"
+    printf "\n ${a1}${red}98${a3} ${cyan}Meu Grupo         ${a3}${on}\n"
     sleep 0.1
     printf " ${a1}${red}99${a3} ${cyan}exit do script    ${a3}${on}\n"
     sleep 0.1
