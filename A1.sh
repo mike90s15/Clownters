@@ -280,7 +280,7 @@ function login(){
         sleep 1
         read -t 45 login
 
-        if [[ $login == hater ]]; then
+        if [[ $login == Hater ]]; then
             echo -e " okay...$end\n"
             sleep 1
             break
@@ -438,7 +438,7 @@ function cnpj(){
     while [[ 1 -eq 1 ]]; do
         clear
 	banner
-        printf "\n ${blue}informe o cnpj para a consulta\n ===> ${cyan}"
+        printf "\n ${blue}Informe o cnpj para a consulta\n ===> ${cyan}"
         read cnpj
 
         if [[ ${cnpj} == q ]]; then
@@ -451,7 +451,7 @@ function cnpj(){
             echo -e "${end} "
             sed 's/,/\n  /g' cnpj.txt | sed 's/"//g' | sed 's/:/: /g' | sed 's/{//g' | sed 's/}//g' | sed 's/\[//g' | sed 's/\]//g' | sed 's/_/\ /g' | sed 's/cnpj:/  cnpj:/' | sed 's/ congressos/congressos/' | sed 's/ exposi\ç\ões/exposi\ç\ões/' | sed 's/cao/ção/g' | sed 's/ao/ão/g'  | sed 's/ao/ão/g'
             rm cnpj.txt
-            printf "\n\n ${blue}consulta novamente (s/n)\n ===> ${cyan}"
+            printf "\n\n ${blue}Consulta novamente (s/n)\n ===> ${cyan}"
 	    read option
 
             if [[ ${option} == s ]]; then
@@ -634,7 +634,7 @@ function password (){
         read -s senha
         echo ""
 
-        if [[ $senha == korn ]]; then
+        if [[ $senha == KoRn ]]; then
             echo -e " okay...$end"
             sleep 1
             break
@@ -654,7 +654,7 @@ function password (){
             clear
 
         else
-            echo -e "\a\a\a\a\a\a\a\a\a\a ${red}login incorreto\n digite "q" para sair\n"
+            echo -e "\a\a\a\a\a\a\a\a\a\a ${red}Login incorreto\n digite "q" para sair\n"
         fi
     done
 }
@@ -677,7 +677,7 @@ function a1 (){
         read -t 60 option
 
 	if [[ $option != ?(+|-)+([0-9]) ]]; then
-	    echo -e " ${yellow}somente numeros! ${end}"
+	    echo -e " ${yellow}Somente numeros! ${end}"
             sleep 1
             a=0
 	fi
