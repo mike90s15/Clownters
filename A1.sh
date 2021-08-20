@@ -544,7 +544,8 @@ function ip(){
 function telefone(){
     while [[ 1 -eq 1 ]]; do
 	clear
-        printf " ${blue}Informe o número para a consulta\n ===> ${cyan}"
+        banner
+        printf "\n ${blue}Informe o número para a consulta\n ===> ${cyan}"
         read num
 
 	if [[ ${num} == q ]]; then
