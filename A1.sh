@@ -382,7 +382,7 @@ function covid(){
     while [[ 1 -eq 1 ]]; do
 	clear
 	banner
-        printf " ${blue}Informe Uf para a consulta\n ===> ${cyan}"
+        printf "\n ${blue}Informe Uf para a consulta\n ===> ${cyan}"
         read uf
 
 	if [[ ${uf} == q ]]; then
