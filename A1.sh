@@ -42,9 +42,12 @@ data=$( date +'%Y/%m/%d' )
 if [[ -d /data/data/com.termux/files/home/ ]]; then
     pkg="pkg"
 
-else                                                                pkg="sudo apt-get"
-fi                                                                                                                              
-if [[ -f .okay ]]; then                                             echo''
+else
+    pkg="sudo apt-get"
+fi
+                                                                                                                              
+if [[ -f .okay ]]; then
+    echo''
 else
     clear
     echo ""
