@@ -597,7 +597,9 @@ function telefone(){
     	    grep -i 'numero: ' numero22.txt
     	    grep -i 'Uf: ' numero22.txt
     	    grep -i 'Cep: ' numero22.txt
-    	    grep -i 'linha: ' numero22.txt
+    	    grep -i 'linha: ' numero22.txt 
+            grep -i 'A Consulta Esta Funcionando Normalmente' numero22.txt
+            grep -i 'O Telefone Inserido Nao Foi Encontrado.' numero22.txt
     	    rm -rf numero*
     	    echo
 	    printf "\n\n ${blue}Consulta novamente (s/n) \n ===> ${cyan}"
