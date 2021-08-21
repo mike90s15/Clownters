@@ -53,14 +53,14 @@ else
     echo ""
     echo -e "${end}"
     echo -e " ${green}$ ${blue}installation of packages ${end}"
-    echo -e " ${green}$ ${blue}instalando Python... ${end}"
-    ${pkg} install -y python &> /dev/null
-    echo -e " ${green}$ ${blue}instalando Python2... ${end}"
-    ${pkg} install -y python2 &> /dev/null
-    echo -e " ${green}$ ${blue}instalando Python3... ${end}"
-    ${pkg} install -y python3 &> /dev/null
-    echo -e " ${green}$ ${blue}instalando PHP... ${end}"
-    ${pkg} install -y php &> /dev/null
+    #echo -e " ${green}$ ${blue}instalando Python... ${end}"
+    #${pkg} install -y python &> /dev/null
+    #echo -e " ${green}$ ${blue}instalando Python2... ${end}"
+    #${pkg} install -y python2 &> /dev/null
+    #echo -e " ${green}$ ${blue}instalando Python3... ${end}"
+    #${pkg} install -y python3 &> /dev/null
+    #echo -e " ${green}$ ${blue}instalando PHP... ${end}"
+    #${pkg} install -y php &> /dev/null
     echo -e " ${green}$ ${blue}instalando Wget... ${end}"
     ${pkg} install wget &> /dev/null
     echo -e " ${green}$ ${blue}instalando Sed... ${end}"
@@ -671,8 +671,14 @@ function password (){
 # o inicializador
 
 function A1 (){
-    login
-    password
+    if [[ -f .sl ]]; then
+        echo -n ""
+    
+    else
+        login
+        password
+        > .sl
+    fi
 
     for (( a = 1; a <= 7; a++ )); do
        #declare -i option
