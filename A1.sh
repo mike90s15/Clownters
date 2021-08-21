@@ -48,6 +48,7 @@ fi
                                                                                                                               
 if [[ -f .okay ]]; then
     echo''
+
 else
     clear
     echo ""
@@ -62,12 +63,11 @@ else
     #echo -e " ${green}$ ${blue}instalando PHP... ${end}"
     #${pkg} install -y php &> /dev/null
     echo -e " ${green}$ ${blue}instalando Wget... ${end}"
-    ${pkg} install wget &> /dev/null
+    ${pkg} install -y wget &> /dev/null
     echo -e " ${green}$ ${blue}instalando Sed... ${end}"
     ${pkg} install -y sed &> /dev/null
     echo -e " ${green}$ ${blue}instalando Curl... ${end}"
-    ${pkg} install -y curl &> /dev/null
-    
+    ${pkg} install -y curl &> /dev/null    
     > .okay
 fi
 
