@@ -112,7 +112,7 @@ function banner_menu(){
     sleep 0.1
     printf " ${a1}${a2}06${a3} ${cyan}Consulta Covid19  ${a3}${on}\n"
     sleep 0.1
-    printf " ${a1}${a2}07${a3} ${cyan}Consulta telefone ${a3}${on}\n"
+    printf " ${a1}${a2}07${a3} ${cyan}Consulta telefone ${a3}${off}\n"
     sleep 0.1
     printf " ${a1}${a2}08${a3} ${cyan}Novo script       ${a3}${on}\n"
     sleep 0.1
@@ -555,9 +555,9 @@ function telefone(){
 	    break
 	fi
 
-	wget https://dualityapi.xyz/apis/flex_7/Consultas%20Privadas/HTML/numero.php?consulta=${num} -O numero.txt &> /dev/null
+	#wget https://dualityapi.xyz/apis/flex_7/Consultas%20Privadas/HTML/numero.php?consulta=${num} -O numero.txt &> /dev/null
 
-	if [[ $? == 0 ]]; then
+	if [[ $? == off ]]; then
 	    sed 's/\\u0000//g' numero.txt | sed 's/<br>/\n/g' > numero1.txt
             sed 's/\\r//g' numero1.txt | sed 's/<p>//g' > numero2.txt
             sed 's/TELEFONE:/Telefone: /' numero2.txt > numero3.txt
