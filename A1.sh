@@ -737,7 +737,7 @@ function A1 (){
 	    sleep 1
 	    telefone
 
-	elif [[ ${option} == 7 ]]; then
+	elif [[ ${option} == 8 ]]; then
 	    printf " ${blue}Carregando... ${end}\n"
 	    sleep 1
 	    new_script
