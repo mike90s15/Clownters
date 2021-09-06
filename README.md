@@ -40,4 +40,4 @@ bash A1.sh
 https://chat.whatsapp.com/InWlHW3ViEiEMDcExZZL63
 
 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢:
-https://t.me/CLOWNTERS
+https://t.me/CLOWNTERS 
