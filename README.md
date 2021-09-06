@@ -35,7 +35,7 @@ git clone https://github.com/mike90s15/Clownters
 
 cd Clownters
 
-bash A1.sh
+bash A1.sh 
 
 
 𝙒𝙝𝙖𝙩𝙨𝙖𝙥𝙥:
