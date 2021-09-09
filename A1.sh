@@ -38,43 +38,12 @@ off="$red      (OFF)"
 
 data=$( date +'%Y/%m/%d' )
 
-
-if [[ -d /data/data/com.termux/files/home/ ]]; then
-    pkg="pkg"
-
-else
-    pkg="sudo apt-get"
-fi
-                                                                                                                              
-if [[ -f .okay ]]; then
-    echo''
-
-else
-    clear
-    echo ""
-    echo -e "${end}"
-    echo -e " ${green}$ ${blue}installation of packages ${end}"
-    #echo -e " ${green}$ ${blue}instalando Python... ${end}"
-    #${pkg} install -y python &> /dev/null
-    #echo -e " ${green}$ ${blue}instalando Python2... ${end}"
-    #${pkg} install -y python2 &> /dev/null
-    #echo -e " ${green}$ ${blue}instalando Python3... ${end}"
-    #${pkg} install -y python3 &> /dev/null
-    #echo -e " ${green}$ ${blue}instalando PHP... ${end}"
-    #${pkg} install -y php &> /dev/null
-    echo -e " ${green}$ ${blue}instalando Wget... ${end}"
-    ${pkg} install -y wget &> /dev/null
-    echo -e " ${green}$ ${blue}instalando Sed... ${end}"
-    ${pkg} install -y sed &> /dev/null
-    echo -e " ${green}$ ${blue}instalando Curl... ${end}"
-    ${pkg} install -y curl &> /dev/null    
-    > .okay
-fi
-
 # banner CLOWNTERS
 # bandeira CLOWNTERS
 
-function banner(){
+
+function banner()
+{
     printf " ${yellow}
  .--------.____________
  || ° ° ° °     .2021.||
@@ -92,11 +61,46 @@ function banner(){
 
    ${pink}<<< PAINEL CLOWNTERS ${data} >>>
  ${green}=======================================\n"
-} 
+}
+
+
+if [[ -d /data/data/com.termux/files/home/ ]]; then
+    pkg="pkg"
+
+else
+    pkg="sudo apt-get"
+fi
+                                                                                                                              
+if [[ -f .okay ]]; then
+    echo''
+
+else
+    clear
+    banner
+    echo -e "${end}"
+    echo -e " ${green}$ ${blue}installation of packages ${end}"
+    #echo -e " ${green}$ ${blue}instalando Python... ${end}"
+    #${pkg} install -y python &> /dev/null
+    #echo -e " ${green}$ ${blue}instalando Python2... ${end}"
+    #${pkg} install -y python2 &> /dev/null
+    #echo -e " ${green}$ ${blue}instalando Python3... ${end}"
+    #${pkg} install -y python3 &> /dev/null
+    #echo -e " ${green}$ ${blue}instalando PHP... ${end}"
+    #${pkg} install -y php &> /dev/null
+    echo -e " ${green}$ ${blue}instalando Wget... ${end}"
+    ${pkg} install -y wget &> /dev/null
+    echo -e " ${green}$ ${blue}instalando Sed... ${end}"
+    ${pkg} install -y sed &> /dev/null
+    echo -e " ${green}$ ${blue}instalando Curl... ${end}"
+    ${pkg} install -y curl &> /dev/null
+    #echo -e " ${green}$ ${blue}instalando Mpg123... ${end}"
+    #${pkg} install -y mpg123 &> /dev/null
+    > .okay
+fi
+
 
 # menu of options
 # menu de opções
-
 
 function banner_menu(){
     sleep 0.1
@@ -114,8 +118,12 @@ function banner_menu(){
     sleep 0.1
     printf " ${a1}${a2}07${a3} ${cyan}Consulta telefone ${a3}${off}\n"
     sleep 0.1
-    printf " ${a1}${a2}08${a3} ${cyan}Novo script       ${a3}${on}\n"
+    printf " ${a1}${a2}08${a3} ${cyan}Gerador de CPF    ${a3}${on}\n"
     sleep 0.1
+    printf " ${a1}${a2}09${a3} ${cyan}Novo script       ${a3}${on}\n"
+    sleep 0.1
+    #printf "\n ${a1}${red}97${a3} ${cyan}Atualizar painel  ${a3}${on}\n"
+    #sleep 0.1
     printf "\n ${a1}${red}98${a3} ${cyan}Meu Grupo         ${a3}${on}\n"
     sleep 0.1
     printf " ${a1}${red}99${a3} ${cyan}exit do script    ${a3}${on}\n"
@@ -168,8 +176,8 @@ function new_script(){
 # Use
 #------------------------------------------------------
 #Mike Edwards"
-    variable2="
-#include<stdio.h>
+    
+    variable2="#include<stdio.h>
 #includie<stdlib.h>
 
 int main(){
@@ -278,7 +286,7 @@ function login(){
 	clear
 	banner
 	echo ""
-        printf " ${green}Login
+        printf " ${green}Username
  ${blue}===> ${cyan}"
         sleep 1
         read -t 45 login
@@ -303,7 +311,7 @@ function login(){
             clear
 
         else
-            echo -e " ${red}Login incorreto\n Digite "Q" para sair\n"
+            echo -e " ${red}Username incorreto\n Digite "Q" para sair\n"
         fi
     done
 }
@@ -381,7 +389,63 @@ function cep(){
 }
 
 
-function covid(){
+function gerador_cpf()
+{
+    while :; do
+    soma=0
+    
+    	for i in {10..2}; do
+            numero=$(($RANDOM%9))
+	    cpf=$cpf$numero
+	    soma=$(($soma+($numero*$i)))
+        done
+
+        resto=$(($soma%11))
+
+        if [[ $resto -lt 2 ]]; then
+            digito=0
+    
+        else
+	    digito=$((11-$resto))
+        fi
+
+        cpf=$cpf$digito
+        soma=0
+
+        for i in {11..2}; do
+	    indice=$((($i-11)*-1))
+	    soma=$(($soma+(${cpf:$indice:1}*$i)))
+        done
+
+        resto=$(($soma%11))
+
+        if [[ $resto -lt 2 ]]; then
+	    digito1=0
+    	
+    	else 
+	    digito1=$((11-$resto))
+        fi
+
+        cpf=$cpf$digito1
+        clear
+	banner
+        printf "\n ${blue}CPF GAREDO: ${cyan}$cpf ${end}\n"
+	printf "\n ${blue}Cinsulta novamente (s/n) \n ===> ${cyan}"
+	read option
+
+	if [[ ${option} == s ]]; then
+	    cpf=$none
+	    continue
+
+	else
+	    break
+	fi
+    done	
+}
+
+
+function covid()
+{
     while [[ 1 -eq 1 ]]; do
 	clear
 	banner
@@ -437,7 +501,8 @@ function covid(){
 }
 
 
-function cnpj(){
+function cnpj()
+{
     while [[ 1 -eq 1 ]]; do
         clear
 	banner
@@ -636,7 +701,7 @@ function password (){
 	clear
 	banner
 	echo ""
-        printf " ${green}Senha
+        printf " ${green}Password
  ${blue}===> ${cyan}"
         read -s senha
         echo ""
@@ -661,7 +726,7 @@ function password (){
             clear
 
         else
-            echo -e "\a\a\a\a\a\a\a\a\a\a ${red}Login incorreto\n Digite "Q" para sair\n"
+            echo -e "\a\a\a\a\a\a\a\a\a\a ${red}Password incorreto\n Digite "Q" para sair\n"
         fi
     done
 }
@@ -736,8 +801,13 @@ function A1 (){
 	    printf " ${blue}Carregando... ${end}\n"
 	    sleep 1
 	    telefone
-
+	
 	elif [[ ${option} == 8 ]]; then
+	    printf " ${blue}Carregando... ${end}\n"
+	    sleep 1
+	    gerador_cpf
+
+	elif [[ ${option} == 9 ]]; then
 	    printf " ${blue}Carregando... ${end}\n"
 	    sleep 1
 	    new_script
