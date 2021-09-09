@@ -548,7 +548,8 @@ function ddd(){
         if [[ ${ddd} == q ]]; then
             break
         fi
-                                                                                                                                                      wget https://brasilapi.com.br/api/ddd/v1/${ddd} -O ddd.txt &> /dev/null
+                                                                                                                                                      
+        wget https://brasilapi.com.br/api/ddd/v1/${ddd} -O ddd.txt &> /dev/null
 
         if [[ $? == 0 ]]; then
             echo -e "${end}"
