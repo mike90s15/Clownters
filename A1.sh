@@ -438,6 +438,7 @@ function gerador_cpf()
 	    continue
 
 	else
+            cpf=$none
 	    break
 	fi
     done	
