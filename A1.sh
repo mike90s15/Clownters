@@ -840,7 +840,8 @@ function A1 (){
 	elif [[ ${option} == 98 ]]; then
 	    printf " ${blue}Carregando... ${end}\n"
             sleep 1
-            termux-open-url https://chat.whatsapp.com/InWlHW3ViEiEMDcExZZL63
+            termux-open-url https://chat.whatsapp.com/L02qgEzToep0SHeYSU4XPt
+            termux-open-url https://t.me/CLOWNTERS
 
         elif [[ $a == 6 ]]; then
 	    echo -e " ${blue}Saindo... ${end}"
