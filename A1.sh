@@ -624,8 +624,8 @@ function telephone()
     while [[ 1 -eq 1 ]]; do
 	for((a=1; a <= 3; a++)); do
 	    clear
-	    #banner
-	    printf " ${yellow}Ex.: +55 (35) 98861-6069 ou 5535988616069\n\n"
+	    banner
+	    printf "\n ${yellow}Ex.: +55 (35) 98861-6069 ou 5535988616069\n\n"
 	    printf " ${blue}Informe o telefone para a consulta\n ===> ${cyan}"
 	    read option
 
