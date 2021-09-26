@@ -116,7 +116,7 @@ function banner_menu(){
     sleep 0.1
     printf " ${a1}${a2}06${a3} ${cyan}Consulta Covid19  ${a3}${on}\n"
     sleep 0.1
-    printf " ${a1}${a2}07${a3} ${cyan}Consulta telefone ${a3}${off}\n"
+    printf " ${a1}${a2}07${a3} ${cyan}Consulta telefone ${a3}${on}\n"
     sleep 0.1
     printf " ${a1}${a2}08${a3} ${cyan}Gerador de CPF    ${a3}${on}\n"
     sleep 0.1
@@ -611,82 +611,105 @@ function ip(){
 }
 
 
-function telefone(){
-    while [[ 1 -eq 1 ]]; do
-	clear
-        banner
-        printf "\n ${blue}Informe o número para a consulta\n ===> ${cyan}"
-        read num
+#!/usr/bin/env bash
 
-	if [[ ${num} == q ]]; then
-	    break
+red="\e[1;31m"
+yellow="\e[1;33m"
+blue="\e[1;34m"
+cyan="\e[1;36m"
+
+
+function telephone()
+{
+    while [[ 1 -eq 1 ]]; do
+	for((a=1; a <= 3; a++)); do
+	    clear
+	    #banner
+	    printf " ${yellow}Ex.: +55 (35) 98861-6069 ou 5535988616069\n\n"
+	    printf " ${blue}Informe o telefone para a consulta\n ===> ${cyan}"
+	    read option
+
+	    if [[ -z ${option} ]]; then
+		ctfor=11
+                echo -e " ${red}No character typed!"
+	        sleep 1
+
+	    elif [[ -n ${option} ]]; then
+		ct=1
+		ctfor=1
+	    fi
+
+	    if [[ ${option} == q ]]; then
+		exxit=1
+	    fi
+
+	    [[ ${ctfor} -eq 1 ]] && break
+        done
+
+	[[ ${exxit} -eq 1 ]] && break
+
+	if [[ ${ct} -eq 1 ]]; then
+	    num=$(echo ${option} | tr -d -c 0123456789)
+	    qua=$(echo ${num} | wc -L)
 	fi
 
-	#wget https://dualityapi.xyz/apis/flex_7/Consultas%20Privadas/HTML/numero.php?consulta=${num} -O numero.txt &> /dev/null
+	if [[ ${qua} -eq 13 ]]; then
+	    DIG="9"
+	    DDI=$(echo ${num:0:2})
+	    DDI="\"${DDI}\""
+	    DDD=$(echo ${num:2:2})
+	    DDD1="\"${DDD}"
+	    DDD="\"${DDD}\""
+	    opr=$(echo ${num:5:2})
+	    opr1="${opr}\""
+	    opr="\"${opr}\""
+	    banda="${DDD1}${DIG}${opr1}"
+	    banda=$(grep ${banda} banda.json)
+	    banda=$(echo ${banda} | tr [:lower:] [:upper:])
+	    banda=$(echo ${banda} | tr -d -c ABCDEFGHIJKLMNOPQRSTUVWXYZ
+)
+	    DDI=$(grep ${DDI} ddi.json | sed 's/{//;s/"//g;s/}//;s/,/\n/g;s/ddi/ ddi/')
+	    DDD=$(grep ${DDD} ddd.json | sed 's/{//;s/}//;s/"//g;s/,/\n/g;s/DDD/ ddd/')
+	    printf "\n telefone: ${num}"
+	    printf "\n${DDI}"
+	    printf "\b${DDD}\n"
+	    printf " linha: ${banda}\n"
+	    printf "\n ${blue}press enter${end}"
+	    read
+	    break
 
-	if [[ $? == off ]]; then
-	    sed 's/\\u0000//g' numero.txt | sed 's/<br>/\n/g' > numero1.txt
-            sed 's/\\r//g' numero1.txt | sed 's/<p>//g' > numero2.txt
-            sed 's/TELEFONE:/Telefone: /' numero2.txt > numero3.txt
-            sed 's/NOME:/Nome: /' numero3.txt > numero4.txt
-            sed 's/CEP:/Cep: /' numero4.txt > numero5.txt
-            sed 's/TIPO_DOC:/Tipo: /' numero5.txt > numero6.txt
-            sed 's/CPF_CNPJ:/CPF-CNPJ: /' numero6.txt > numero7.txt
-            sed 's/DOC:/Documento: /' numero7.txt > numero8.txt
-            sed 's/ENDERECO:/Endereco: /' numero8.txt > numero9.txt
-            sed 's/BAIRRO:/Bairro: /' numero9.txt > numero10.txt
-            sed 's/CIDADE:/Cidade: /' numero10.txt > numero11.txt
-            sed 's/ID_UF:/ID\/UF:/' numero11.txt > numero12.txt
-            sed 's/UF:/Uf: /' numero12.txt > numero13.txt
-            sed 's/TIPO_LINHA:/Linha: /' numero13.txt > numero14.txt
-            sed 's/TIPO_PESSOA:/Pessoa: /' numero14.txt > numero15.txt
-            sed 's/NOME_ASSINANTE:/Nome\/Ass: /' numero15.txt > numero16.txt
-            sed 's/NUMERO:/Numero: /' numero16.txt > numero17.txt
-            sed 's/CPF:/CPF: /' numero17.txt > numero18.txt
-            sed 's/PESSOA:/Pessoa: /' numero18.txt > numero19.txt
-            sed 's/DDD:/DDD: /' numero19.txt > numero20.txt
-            sed 's/OPERADORA:/Operadora: /' numero20.txt > numero21.txt
-            sed 's/TDocumento//' numero21.txt > numero22.txt
-            echo -e "${end}"
-            grep -i 'telefone: ' numero22.txt
-    	    grep -i 'operadora: ' numero22.txt
-	    grep -i 'DDD: ' numero22.txt
-    	    grep -i 'nome: ' numero22.txt
-    	    grep -i 'nome\/ass: ' numero22.txt
-    	    grep -i 'pessoa: ' numero22.txt
-    	    grep -i 'tipo: ' numero22.txt
-    	    grep -i 'documento: ' numero22.txt
-    	    grep -i 'cpf-cnpj: ' numero22.txt
-    	    grep -i 'cpf: ' numero22.txt
-    	    grep -i 'cidade:' numero22.txt
-    	    grep -i 'bairro: ' numero22.txt
-    	    grep -i 'endereco: ' numero22.txt
-    	    grep -i 'numero: ' numero22.txt
-    	    grep -i 'Uf: ' numero22.txt
-    	    grep -i 'Cep: ' numero22.txt
-    	    grep -i 'linha: ' numero22.txt 
-            grep -i 'A Consulta Esta Funcionando Normalmente' numero22.txt
-            grep -i 'O Telefone Inserido Nao Foi Encontrado.' numero22.txt
-    	    rm -rf numero*
-    	    echo
-	    printf "\n\n ${blue}Consulta novamente (s/n) \n ===> ${cyan}"
-            read option
-
-            if [[ ${option} == s ]]; then
-                continue
-
-            else
-                break
-            fi
+	elif [[ ${qua} -eq 12 ]]; then
+	    DIG="9"
+	    DDI=$(echo ${num:0:2})
+	    DDI="\"${DDI}\""
+	    DDD=$(echo ${num:2:2})
+	    DDD1="\"${DDD}"
+	    DDD="\"${DDD}\""
+	    opr=$(echo ${num:4:2})
+	    opr1="${opr}\""
+	    opr="\"${opr}\""
+            banda="${DDD1}${DIG}${opr1}"
+	    banda=$(grep ${banda} banda.json)
+	    banda=$(echo ${banda} | tr [:lower:] [:upper:])
+	    banda=$(echo ${banda} | tr -d -c ABCDEFGHIJKLMNOPQRSTUVWXYZ)
+	    DDI=$(grep ${DDI} ddi.json | sed 's/{//;s/"//g;s/}//;s/,/\n/g;s/ddi/ ddi/')
+	    DDD=$(grep ${DDD} ddd.json | sed 's/{//;s/}//;s/"//g;s/,/\n/g;s/DDD/ ddd/')
+	    #DDD=$(echo ${DDD})
+	    printf "\n telefone: ${num}"
+	    printf "\n${DDI}"
+	    printf "\b${DDD}\n"
+	    printf " linha: ${banda}\n"
+	    printf "\n ${blue}press enter${end}"
+	    read
+	    break 
 
         else
-            echo -e "\n  ${red}Sem internet!"
-            sleep 1
-            break
+	    [[ ${ctfor} -eq 11 ]] || echo " invalid phone"
+	    sleep 1
 	fi
     done
 }
-
+#telephone
 
 # password
 # senha
@@ -802,7 +825,7 @@ function A1 (){
 	elif [[ ${option} == 7 ]]; then
 	    printf " ${blue}Carregando... ${end}\n"
 	    sleep 1
-	    telefone
+            telephone
 	
 	elif [[ ${option} == 8 ]]; then
 	    printf " ${blue}Carregando... ${end}\n"
