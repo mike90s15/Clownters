@@ -65,6 +65,9 @@ function banner()
 
 
 if [[ -d /data/data/com.termux/files/home/ ]]; then
+    path_painel=`pwd`
+    path_painel_bin="/data/data/com.termux/files/usr/etc/profile"
+    echo "PATH=${PATH}:${path_painel}" >> ${path_painel_bin}
     pkg="pkg"
 
 else
