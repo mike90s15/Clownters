@@ -430,7 +430,7 @@ function gerador_cpf()
         clear
 	banner
         printf "\n ${blue}CPF GAREDO: ${cyan}$cpf ${end}\n"
-	printf "\n ${blue}Cinsulta novamente (s/n) \n ===> ${cyan}"
+	printf "\n ${blue}Gera novamente (s/n) \n ===> ${cyan}"
 	read option
 
 	if [[ ${option} == s ]]; then
