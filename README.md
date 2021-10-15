@@ -31,7 +31,7 @@ cd Clownters
 bash A1.sh
  
 
-𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no Linux
+## 𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no Linux
 
 sudo apt-get install git
 
