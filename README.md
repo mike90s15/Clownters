@@ -6,11 +6,17 @@ feito 100% em bash (Shell script) como função de deixar do painel mias fácil 
 
 ### ✔️**Funções**
 ✔️**Consulta por número**
+
 ✔️**Consulta por CNPJ**
+
 ✔️**Consulta IP**
+
 ✔️**Consulta CEP**
+
 ✔️**Consulta Bancaria**
+
 ✔️**Consultas DDD**
+
 ✔️**Situação sobre a covid19**
 
 
