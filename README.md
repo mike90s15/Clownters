@@ -20,7 +20,7 @@ feito 100% em bash (Shell script) como função de deixar do painel mias fácil 
 ✔️**Situação sobre a covid19**
 
 
-## 𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no celular
+## 𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no Termux
 
 pkg install git
 
@@ -31,7 +31,7 @@ cd Clownters
 bash A1.sh
  
 
-𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no computador
+𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no Linux
 
 sudo apt-get install git
 
@@ -41,9 +41,8 @@ cd Clownters
 
 bash A1.sh 
 
-
-𝙒𝙝𝙖𝙩𝙨𝙖𝙥𝙥:
+#### 𝙒𝙝𝙖𝙩𝙨𝙖𝙥𝙥:
 https://chat.whatsapp.com/InWlHW3ViEiEMDcExZZL63
 
-𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢:
+#### 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢:
 https://t.me/CLOWNTERS 
