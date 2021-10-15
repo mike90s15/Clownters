@@ -4,7 +4,7 @@ A organização Clownters lança seu primeiro painel
 Um painel de consulta para facilitar sua vida! 
 feito 100% em bash (Shell script) como função de deixar do painel mias fácil ao uso, aliás os Linux já ver com o Shell por padrão...
 
-✔️**Funções**
+### ✔️**Funções**
 ✔️**Consulta por número**
 ✔️**Consulta por CNPJ**
 ✔️**Consulta IP**
