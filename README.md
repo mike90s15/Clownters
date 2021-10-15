@@ -4,9 +4,9 @@
 <Img src="https://user-images.githubusercontent.com/82988362/130334724-09a5d766-c30a-4155-af14-5b5805bf1250.jpg"/>
 </div>
 
-A organização Clownters lança seu primeiro painel
-Um painel de consulta para facilitar sua vida! 
-feito 100% em bash (Shell script) como função de deixar do painel mias fácil ao uso, aliás os Linux já ver com o Shell por padrão...
+  A organização Clownters lança seu primeiro painel de consulta
+Um painel de consulta para facilitar sua vida e ajuda no dia a dia! 
+100% feito em bash (Shell script) como função de deixar do painel mias fácil ao uso na plataforma, aliás os Linux e o Termux já ver com o Shell por padrão...
 
 ### ✔️**Funções**
 ✔️**Consulta por número**
