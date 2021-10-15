@@ -1,22 +1,20 @@
-
-
-𝙋𝙖𝙞𝙣𝙚𝙡 𝘾𝙡𝙤𝙬𝙣𝙩𝙚𝙧𝙨
+# 𝙋𝙖𝙞𝙣𝙚𝙡 𝘾𝙡𝙤𝙬𝙣𝙩𝙚𝙧𝙨
 
 A organização Clownters lança seu primeiro painel
 Um painel de consulta para facilitar sua vida! 
 feito 100% em bash (Shell script) como função de deixar do painel mias fácil ao uso, aliás os Linux já ver com o Shell por padrão...
 
-✔️ Funções
-✖️ Consulta por número
-✔️ Consulta por CNPJ
-✔️ Consulta IP
-✔️ Consulta CEP
-✔️ Consulta Bancaria
-✔️ Consultas DDD
-✔️ Situação sobre a covid19
+✔️**Funções**
+✔️**Consulta por número**
+✔️**Consulta por CNPJ**
+✔️**Consulta IP**
+✔️**Consulta CEP**
+✔️**Consulta Bancaria**
+✔️**Consultas DDD**
+✔️**Situação sobre a covid19**
 
 
-𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no celular
+## 𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no celular
 
 pkg install git
 
