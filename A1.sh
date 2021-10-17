@@ -27,7 +27,9 @@ source .functions/.functions.sh
 chmod +x *
 test -f README.md && rm README.md
 access
-[[ $? -eq 1 ]] && exit
+ret="$?"
+[[ ${ret} -eq 1 ]] && banner && exit 0
+[[ ${ret} -eq 99 ]] && banner && exit 99
 downloads
 
 while :; do
