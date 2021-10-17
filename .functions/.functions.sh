@@ -569,7 +569,7 @@ function social_networks()
     banner
     printf "\n${blue} TELEGRAM: ${cyan}https://t.me/CLOWNTRRS\n"
     printf "${blue} FACEBOOK: ${cyan}https://www.facebook.com/groups/4142067205870369/?ref=share\n"
-    printf "${blue} WHATSAPP: ${cyan}https://chat.whatsapp.com/L02qgEzToep0SHeYSU4XPt\n"
+    printf "${blue} WHATSAPP: ${cyan}https://chat.whatsapp.com/EEpJ3seLYe3Ir7nGI8818m\n"
     printf "${blue} TWITTER : ${cyan}@CLOWNTERS1\n"
     printf "\n Press enter to exit${end}"
     read
