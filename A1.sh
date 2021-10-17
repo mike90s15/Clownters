@@ -59,7 +59,7 @@ while :; do
         09) loading; gerador_cpf;;
         10) loading; new_script;;
         11) loading; _nmap;;
-        96) loading; bash update.sh;;
+        96) loading; banner; bash update.sh;;
         97) loading; social_networks;;
         98) loading; version;;
         99) banner; exit 0;;
