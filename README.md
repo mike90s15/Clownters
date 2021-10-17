@@ -32,7 +32,6 @@ git clone https://github.com/mike90s15/Clownters
 cd Clownters
 bash A1.sh
 ``` 
-
 ## 𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no Linux
 ```
 sudo apt-get update -y && upgrade -y
@@ -41,6 +40,7 @@ git clone https://github.com/mike90s15/Clownters
 cd Clownters
 bash A1.sh 
 ```
+## Redes sociais
 #### 𝙒𝙝𝙖𝙩𝙨𝙖𝙥𝙥:
 https://chat.whatsapp.com/InWlHW3ViEiEMDcExZZL63
 
