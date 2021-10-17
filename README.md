@@ -42,7 +42,7 @@ bash A1.sh
 ```
 ## Redes sociais
 #### 𝙒𝙝𝙖𝙩𝙨𝙖𝙥𝙥:
-https://chat.whatsapp.com/InWlHW3ViEiEMDcExZZL63
+https://chat.whatsapp.com/EEpJ3seLYe3Ir7nGI8818m
 
 #### 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢:
 https://t.me/CLOWNTERS 
