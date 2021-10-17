@@ -22,11 +22,9 @@
  #CLOWNTERS
 CLOWNTERS
 
-[[ -f .sl ]] && sl=0
 cd ..; rm -rf Clownters
 printf "\n\e[1;33m Atualizando...\e[m"
 git clone https://github.com/mike90s15/Clownters &> /dev/null
 cd Clownters
-[[ ${sl} -eq 0 ]] && > .sl
 chmod +x *
 ./A1.sh
