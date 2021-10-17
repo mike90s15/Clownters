@@ -564,8 +564,7 @@ function social_networks()
     clear
     termux-open-url https://t.me/CLOWNTERS &> /dev/null
     sleep 1
-    termux-open-url https://chat.whatsapp.com/L02qgEzT
-oep0SHeYSU4XPt &> /dev/null
+    termux-open-url https://chat.whatsapp.com/EEpJ3seLYe3Ir7nGI8818m &> /dev/null
     sleep 2
     banner
     printf "\n${blue} TELEGRAM: ${cyan}https://t.me/CLOWNTRRS\n"
