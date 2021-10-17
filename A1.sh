@@ -24,10 +24,11 @@ CLOWNTERS
 
 source .functions/.variables.sh
 source .functions/.functions.sh
+chmod +x *
+rm README.md
 access
 [[ $? -eq 1 ]] && exit
 downloads
-chmod +x *
 
 while :; do
     clear
