@@ -21,7 +21,6 @@
  #CLOWNTERS
 CLOWNTERS
 
-
 source .functions/.variables.sh
 source .functions/.functions.sh
 access
