@@ -93,7 +93,7 @@ function access()
 }
 function banco()
 {
-    while [[ 1 -eq 1 ]]; do
+    while :; do
         clear
         banner
         printf "\n ${blue}Informe o Codigo do banco para a consulta\n ===> ${cyan}"
@@ -218,7 +218,7 @@ function bin()
 }
 function cep()
 {
-    while [[ 1 -eq 1 ]]; do
+    while :; do
         clear
         banner
         printf "\n ${blue}Informe o cep para a consulta\n ===> ${cyan}"
@@ -238,10 +238,10 @@ function cep()
 }
 function _cnpj()
 {
-    while [[ 1 -eq 1 ]]; do
+    while :; do
         clear
         banner
-        printf "\n ${blue}HInforme o CNPJ para a consulta\n ===> ${cyan}"
+        printf "\n ${blue}Informe o CNPJ para a consulta\n ===> ${cyan}"
         read_num
         ret="$?"
         [[ ${ret} -eq 99 ]] && return 99
