@@ -185,7 +185,7 @@ function banner_menu()
     sleep 0.000000000001
     printf " ${a1}${a2}10${a3} ${cyan}Criar script         ${a3}${on}\n"
     sleep 0.000000000001
-    printf " ${a1}${a2}11${a3} ${cyan}Snaear portas        ${a3}${on}\n"
+    printf " ${a1}${a2}11${a3} ${cyan}Scanear portas        ${a3}${on}\n"
     sleep 0.000000000001
     printf "\n ${a1}${red}96${a3} ${cyan}Atualizar painel     ${a3}${on}\n"
     sleep 0.000000000001
