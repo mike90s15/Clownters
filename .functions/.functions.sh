@@ -513,7 +513,8 @@ function _pstermux()
 
     for((a=0;a<=2;a++)); do
         clear
-        read -p " \n What's your name: " name
+        printf "\n What's your name: " 
+        read name
         [[ -n ${name} ]] && break || echo " empty. not?"
         sleep 1
     done
