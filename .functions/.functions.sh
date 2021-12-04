@@ -506,13 +506,14 @@ function read_alpha()
 }
 function _pstermux()
 {
+    banner
     local a=0
     [[ -f .okay ]] || pkg i -y figlet &> /dev/null
     echo "Okay" > .okay_tema_ps1
 
     for((a=0;a<=2;a++)); do
         clear
-        read -p " What's your name: " name
+        read -p " \n What's your name: " name
         [[ -n ${name} ]] && break || echo " empty. not?"
         sleep 1
     done
