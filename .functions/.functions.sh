@@ -482,6 +482,7 @@ function _nmap()
         fi
     done
 }
+
 function read_alpha()
 {
     read -t 45 inputuse
@@ -502,6 +503,23 @@ function read_alpha()
         sleep 1
         return 1
     fi
+}
+function _pstermux()
+{
+    local a=0
+    [[ -f .okay ]] || pkg i -y figlet &> /dev/null
+    echo "Okay" > .okay_tema_ps1
+
+    for((a=0;a<=2;a++)); do
+        clear
+        read -p " What's your name: " name
+        [[ -n ${name} ]] && break || echo " empty. not?"
+        sleep 1
+    done
+
+    local ps1="\"${pred}┌─(${pgreen}${name}${pred})${pyellow}@${pred}(${pgreen}Termux${pred})${pwhite}:${pblue_n}\w\n${pred}└─\#─≽${pgreen} \$ ${pgreen_n}\""
+    printf "clear\nname=\"${name}\"\nfiglet ${name}\nPS1=${ps1}" > ~/.bashrc
+    return 0;
 }
 function read_alphanum()
 {
