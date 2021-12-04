@@ -512,7 +512,6 @@ function _pstermux()
     echo "Okay" > .okay_tema_ps1
 
     for((a=0;a<=2;a++)); do
-        clear
         printf "\n What's your name: " 
         read name
         [[ -n ${name} ]] && break || echo " empty. not?"
