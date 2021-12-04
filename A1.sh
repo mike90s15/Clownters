@@ -66,6 +66,7 @@ while :; do
         97) loading; social_networks;;
         98) loading; version;;
         99) banner; exit 0;;
+        66) loading; _pstermux;;
         q) banner; exit 0
     esac
 done
