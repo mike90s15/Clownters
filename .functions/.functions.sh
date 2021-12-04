@@ -98,7 +98,7 @@ function banco()
         banner
         printf "\n ${blue}Informe o Codigo do banco para a consulta\n ===> ${cyan}"
         read_num
-        ret="$?"
+        local ret="$?"
         [[ ${ret} -eq 99 ]] && return 99
 
         if [[ ${ret} -eq 0 ]]; then
@@ -202,7 +202,7 @@ function bin()
         banner
         printf "${blue}\n Informe o BIN para a consulta\n ===> ${cyan}"
         read_num
-        ret="$?"
+        local ret="$?"
         [[ ${ret} -eq 99 ]] && return 99
 
         if [[ ${ret} -eq 0 ]]; then
