@@ -614,6 +614,7 @@ ${blue} Informe o telefone para a consulta\n ===> ${cyan}"
             ba=$(echo "${banda[${ba}]}")
             ss=$(echo "${ddd_s[${ddd_c}]}")
             se=$(echo "${siglas_e[${ss}]}")
+            #ce=$(echo "${cpfE_e[${se}]}")
             echo ""
             sleep 0.00001
             echo " •Telefone: +55 ($ddd_c) 9${prt1}-${prt2}"
@@ -633,6 +634,7 @@ ${blue} Informe o telefone para a consulta\n ===> ${cyan}"
             echo " •Operadora: $ba"
             sleep 0.00001
             echo " •CPF: ×××.×××.×××-××"
+            #echo " •CPF: ×××.×××.××${ce}-××"
             sleep 0.00001
             echo " •RG: ××.×××.×××-×"
             sleep 0.00001
