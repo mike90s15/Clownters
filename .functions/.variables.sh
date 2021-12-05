@@ -142,6 +142,7 @@ array
 declare -A banda
 declare -A ddd_s
 declare -A siglas_e
+declare -A cpfE_e
 banda=(
   [Mike edwards]="Mike Edwards"
   [11980]="Oi"
@@ -1603,4 +1604,32 @@ siglas_e=(
   [SP]="São Paulo"
   [SE]="Sergipe"
   [TO]="Tocantins"
+)
+cpfE_e=(
+  [Distrito Federal]="1"
+  [Goiás]="1"
+  [Mato Grosso Do Sul]="1"
+  [Tocantins]="1"
+  [Pará]="2"
+  [Amazonas]="2"
+  [Acre]="2"
+  [Amapá]="2"
+  [Rondônia]="2"
+  [Roraima]="2"
+  [Ceará]="3"
+  [Maranhão]="3"
+  [Piauí]="3"
+  [Pernambuco]="4"
+  [Rio Grande Do Norte]="4"
+  [Paraíba]="4"
+  [Alagoa]="4"
+  [Bahia]="5"
+  [Sergipe]="5"
+  [Minas Gerais]=6
+  [Rio De Janeiro]="7"
+  [Espírito Santo]="7"
+  [São Paulo]="8"
+  [Paraná]="9"
+  [Santa Catarina]="9"
+  [Rio Grande Do Su]="0"
 )
