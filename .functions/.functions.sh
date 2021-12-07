@@ -94,7 +94,6 @@ function access()
 function banco()
 {
     while :; do
-        clear
         banner
         printf "\n ${blue}Informe o Codigo do banco para a consulta\n ===> ${cyan}"
         read_num
@@ -115,9 +114,8 @@ function banco()
 }
 function banner()
 {
-    clear
     sleep 0.0000000001
-    printf " ${yellow}
+    printf "\ec ${yellow}
  .--------.____________
  || ° ° ° °     .2021.|| ${green}®${yellow}"
     sleep 0.0000000001
@@ -243,7 +241,7 @@ function _cnpj()
         banner
         printf "\n ${blue}Informe o CNPJ para a consulta\n ===> ${cyan}"
         read_num
-        ret="$?"
+        local ret="$?"
         [[ ${ret} -eq 99 ]] && return 99
 
         if [[ ${ret} -eq 0 ]]; then
@@ -264,7 +262,7 @@ function covid()
         banner
         printf "\n ${blue}Informe Uf para a consulta\n ===> ${cyan}"
         read_alpha
-        ret="$?"
+        local ret="$?"
         [[ ${ret} -eq 99 ]] && return 99
 
         if [[ ${ret} -eq 0 ]]; then
@@ -306,7 +304,7 @@ function ddd()
         banner
         printf "\n ${blue}Indorme o DDD para a consulta\n ===> ${cyan}"
         read_num
-        ret="$?"
+        local ret="$?"
         [[ ${ret} -eq 99 ]] && return 99
 
         if [[ ${ret} -eq 0 ]]; then
@@ -455,7 +453,7 @@ function new_script()
     banner
     printf "${blue}\n Name for the script: ${cyan}"
     read_empty
-    ret="$?"
+    local ret="$?"
     [[ ${ret} -eq 99 ]] && return 99
 
     if [[ ${ret} -eq 0 ]]; then
@@ -471,7 +469,7 @@ function _nmap()
         banner
         printf "\n\e[34m Ex.: google.com ou youtu.be\n Host: \e[36m"
         read_empty
-        ret="$?"
+        local ret="$?"
         [[ ${ret} -eq 99 ]] && return 99
 
         if [[ ${ret} -eq 0 ]]; then
@@ -601,7 +599,7 @@ function telephone()
 ${yellow} Ex.: (11) 99127-3711 ou 11991273711\n
 ${blue} Informe o telefone para a consulta\n ===> ${cyan}"
         read_empty
-        ret="$?"
+        local ret="$?"
         [[ ${ret} -eq 99 ]] && return 99
         num=$(echo ${inputuse} | tr -d -c 0123456789)
         qua=$(echo ${num} | wc -L)
