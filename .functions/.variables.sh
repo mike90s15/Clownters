@@ -115,12 +115,12 @@ print(\'Hello world\')
 
 "
 <<menu
-user="Hater"
-pass="amei" 
 variable for menu
 variables para el menú
 variáveis para o menu
 menu
+userm="Hater
+pass="amei"
 a1="$green[$end"
 a2="\033[1;36m"
 a3="$green]$end"
