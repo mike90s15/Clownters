@@ -119,7 +119,7 @@ variable for menu
 variables para el menú
 variáveis para o menu
 menu
-userm="Hater
+userm="Hater"
 pass="amei"
 a1="$green[$end"
 a2="\033[1;36m"
