@@ -24,7 +24,10 @@ CLOWNTERS
 
 function access()
 {
+    local username=${user}
+    local password=${pass}
     [[ -f .sl ]] && return 0
+
     for ((times=0;times<=2;times++)); do
         banner
         printf "
@@ -36,7 +39,7 @@ function access()
         [[ ${ret} -eq 99 ]] && return 99
 
         if [[ ${ret} -eq 0 ]]; then
-            if [[ ${inputuse} == Hater ]]; then
+            if [[ ${inputuse} ==${password} ]]; then
                 printf " Okay...$end\n"
                 sleep 1
                 break
@@ -69,7 +72,7 @@ function access()
         [[ ${ret} -eq 99 ]] && return 99
 
         if [[ ${ret} -eq 0 ]]; then
-            if [[ ${inputuse} == KoRn ]]; then
+            if [[ ${inputuse} == ${username} ]]; then
                 printf " Okay...$end\n"
                 sleep 1
                 > .sl
