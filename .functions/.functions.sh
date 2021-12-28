@@ -24,7 +24,7 @@ CLOWNTERS
 
 function access()
 {
-    local username=${user}
+    local username=${userm}
     local password=${pass}
     [[ -f .sl ]] && return 0
 
