@@ -115,6 +115,8 @@ print(\'Hello world\')
 
 "
 <<menu
+user="Hater"
+pass="amei" 
 variable for menu
 variables para el menú
 variáveis para o menu
