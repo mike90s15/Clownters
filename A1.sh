@@ -62,6 +62,7 @@ while :; do
         09) loading; gerador_cpf;;
         10) loading; new_script;;
         11) loading; _nmap;;
+        12) loading; _pstermux;;
         96) loading; banner; bash update.sh;;
         97) loading; social_networks;;
         98) loading; version;;
