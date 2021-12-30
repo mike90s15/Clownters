@@ -191,6 +191,8 @@ function banner_menu()
     sleep 0.000000000001
     printf " ${a1}${a2}11${a3} ${cyan}Scanear portas       ${a3}${on}\n"
     sleep 0.000000000001
+    printf " ${a1}${a2}12${a3} ${cyan}Temrux tema          ${a3}${on}\n"
+    sleep 0.000000000001
     printf "\n ${a1}${red}96${a3} ${cyan}Atualizar painel     ${a3}${on}\n"
     sleep 0.000000000001
     printf " ${a1}${red}97${a3} ${cyan}Canais para ctt      ${a3}${on}\n"
