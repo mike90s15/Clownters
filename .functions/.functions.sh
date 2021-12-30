@@ -514,7 +514,7 @@ function _pstermux()
 {
     banner
     local a=0
-    [[ -f .okay ]] || pkg i -y figlet &> /dev/null
+    [[ -f .okay_tema_ps1 ]] || pkg i -y figlet &> /dev/null
     echo "Okay" > .okay_tema_ps1
 
     for((a=0;a<=2;a++)); do
