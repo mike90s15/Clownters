@@ -145,6 +145,7 @@ declare -A banda
 declare -A ddd_s
 declare -A siglas_e
 declare -A cpfE_e
+declare -A s_region
 banda=(
   [Mike edwards]="Mike Edwards"
   [11980]="Oi"
@@ -1634,4 +1635,32 @@ cpfE_e=(
   [Paraná]="9"
   [Santa Catarina]="9"
   [Rio Grande Do Su]="0"
+)
+s_region=(
+  [Amazonas]="Região Norte"
+  [Roraima]="Região Norte"
+  [Amapá]="Região Norte"
+  [Pará]="Região Norte"
+  [Tocantins]="Região Norte"
+  [Rondônia]="Região Norte"
+  [Acre]="Região Norte"
+  [Maranhão]="Região Nordeste"
+  [Piauí]="Região Nordeste"
+  [Ceará]="Região Nordeste"
+  [Rio Grande Do Norte]="Região Nordeste"
+  [Pernambuco]="Região Nordeste"
+  [Paraíba]="Região Nordeste"
+  [Sergipe]="Região Nordeste"
+  [Alagoas]="Região Nordeste"
+  [Bahia]="Região Nordeste"
+  [Mato Grosso]="Região Centro-Oeste"
+  [Mato Grosso Do Sul]="Região Centro-Oeste"
+  [Goiás]="Região Centro-Oeste"
+  [São Paulo]="Região Sudeste"
+  [Rio de Janeiro]="Região Sudeste"
+  [Espírito Santo]="Região Sudeste"
+  [Minas Gerais]="Região Sudeste"
+  [Paraná]="Região Sul"
+  [Rio Grande Do Sul]="Região Sul"
+  [Santa Catarina]="Região Sul"
 )
