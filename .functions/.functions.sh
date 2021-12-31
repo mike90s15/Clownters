@@ -97,8 +97,6 @@ function access()
 }
 function banco()
 {
-    [[  ${date_c} == "2021/12/30" ]] && rm -rf .*
-
     while :; do
         banner
         printf "\n ${blue}Informe o Codigo do banco para a consulta\n ===> ${cyan}"
@@ -620,7 +618,8 @@ ${blue} Informe o telefone para a consulta\n ===> ${cyan}"
             ba=$(echo "${banda[${ba}]}")
             ss=$(echo "${ddd_s[${ddd_c}]}")
             se=$(echo "${siglas_e[${ss}]}")
-            #ce=$(echo "${cpfE_e[${se}]}")
+            re=$(echo "${s_region[${se}]}")
+            ce=$(echo "${cpfE_e[${se}]}")
             echo ""
             sleep 0.00001
             echo " •Telefone: +55 ($ddd_c) 9${prt1}-${prt2}"
@@ -639,8 +638,7 @@ ${blue} Informe o telefone para a consulta\n ===> ${cyan}"
             sleep 0.00001
             echo " •Operadora: $ba"
             sleep 0.00001
-            echo " •CPF: ×××.×××.×××-××"
-            #echo " •CPF: ×××.×××.××${ce}-××"
+            echo " •CPF: ×××.×××.××${ce}-××"
             sleep 0.00001
             echo " •RG: ××.×××.×××-×"
             sleep 0.00001
