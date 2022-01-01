@@ -22,6 +22,10 @@
  #CLOWNTERS
 CLOWNTERS
 
+termux-open-url https://chat.whatsapp.com/LKqLwcRheov1Dlv6HDaFMr
+sleep 3
+termux-open-url https://t.me/clownters
+sleep 2
 test -f Sploit && rm Sploit
 test -f SECURITY.md && rm SECURITY.md
 test -f LICENSE && rm LICENSE
