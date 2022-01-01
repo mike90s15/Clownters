@@ -207,7 +207,7 @@ function bin()
         printf "${blue}\n Informe o BIN para a consulta\n ===> ${cyan}"
         read_num
         local ret="$?"
-        [[ ${ret} -eq 99 ]] && return 99
+        [[ ${ret} -eq 99 ]] && return 9
 
         if [[ ${ret} -eq 0 ]]; then
             wget https://lookup.binlist.net/${inputuse} -O bin.txt &> /dev/null
