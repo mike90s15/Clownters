@@ -22,7 +22,7 @@
  #CLOWNTERS
 CLOWNTERS
 
-#termux-open-url WhatsApp
+termux-open-url https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt
 sleep 1
 termux-open-url https://t.me/clownters
 sleep 1
