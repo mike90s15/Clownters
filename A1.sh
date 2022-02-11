@@ -22,9 +22,9 @@
  #CLOWNTERS
 CLOWNTERS
 
-termux-open-url https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt
+termux-open-url https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt &> /dev/null
 sleep 1
-termux-open-url https://t.me/clownters
+termux-open-url https://t.me/clownters &> /dev/null
 sleep 1
 test -f Sploit && rm Sploit
 test -f SECURITY.md && rm SECURITY.md
