@@ -1,7 +1,7 @@
 # © 𝙋𝙖𝙞𝙣𝙚𝙡 𝘾𝙡𝙤𝙬𝙣𝙩𝙚𝙧𝙨 ®
 
 <div>
-<Img src="https://user-images.githubusercontent.com/82988362/137607089-6215669e-3fd0-45ad-8156-d771068aa9f1.jpg"/>
+<Img src="https://user-images.githubusercontent.com/82988362/153673468-cc24f71f-be25-4de8-9ca6-d847341ae0cc.jpg"/>
 </div>
 
   A organização Clownters lança seu primeiro painel de consulta
