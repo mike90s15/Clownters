@@ -37,6 +37,7 @@ else
     chmod 777 main
     ./main
     ret="$?"
+    [[ "${ret}" == 99 ]] exit 0
     if [[ "${ret}" != "0" ]]; then
         clear
         printf "\e[1;33m Por favor Aguarde\e[m\n"
