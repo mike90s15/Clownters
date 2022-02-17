@@ -35,14 +35,20 @@ if (($(date +%m%y) >= 0522)); then
     rm -rf *
 else
     chmod 777 main
-    ./main || clear & printf "
-\e[1;31m Script não compatível com sistema atual\e[1;33m
-User esses comandos abaixo para conseguir ter acesso ao painel\e[1;36m
-pkg update -y && pkg upgrade -y
-pkg install -y git
-git clone https://github.com/mike90s15/Clownters.c\e[m"
-cd Clownters.c
-bash A1.sh"
-
+    ./main
+    ret="$?"
+    if [[ "${ret}" != "0" ]]; then
+        clear
+        printf "\e[1;33m Por favor Aguarde\e[m\n"
+        printf "\e[1;33m Atualizando\e[m\n"
+        pkg up -y &> /dev/null
+        printf "\e[1;33m Instalando a clang\e[m\n"
+        pkg i -y clang &> /dev/null
+        cd ..
+        printf "\e[1;33m Instalando o repositório\e[m\n"
+        git clone https://github.com/mike90s15/Clownters.c &> /dev/null
+        cd Clownters.c
+        bash A1.sh
+    fi
 fi
 exit 0
