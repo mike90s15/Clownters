@@ -44,5 +44,4 @@ bash A1.sh
 #### 𝙒𝙝𝙖𝙩𝙨𝙖𝙥𝙥:
 https://chat.whatsapp.com/EEpJ3seLYe3Ir7nGI8818m
 
-#### 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢:
-https://t.me/CLOWNTERS 
+#### [𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢](https://t.me/CLOWNTERS)
