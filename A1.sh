@@ -44,7 +44,8 @@ else
         clear
         printf "\e[1;33m Por favor Aguarde\e[m\n"
         printf "\e[1;33m Atualizando\e[m\n"
-        pkg up -y &> /dev/null
+        pkg update -y &> /dev/null
+        pkg upgrade -y &> /dev/null
         printf "\e[1;33m Instalando a clang\e[m\n"
         pkg i -y clang &> /dev/null
         cd ..
