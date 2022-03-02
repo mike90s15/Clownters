@@ -22,12 +22,12 @@
  #CLOWNTERS
 CLOWNTERS
 
+termux-open-url https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt &> /dev/null
+sleep 3
+termux-open-url https://t.me/clownters &> /dev/null
+sleep 3
 termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
 sleep 3
-termux-open-url https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt &> /dev/null
-sleep 1
-termux-open-url https://t.me/clownters &> /dev/null
-sleep 1
 test -f Sploit && rm Sploit
 test -f SECURITY.md && rm SECURITY.md
 test -f LICENSE && rm LICENSE
