@@ -21,9 +21,7 @@ Um painel de consulta para facilitar sua vida e ajuda no dia a dia!
 
 ✔️**Situação sobre a covid19**
 
-@[](https://youtu.be/QNJL6nfu__Q)
-@[youtube](http://www.youtube.com/embed/dQw4w9WgXcQ)
-
+[](https://youtu.be/QNJL6nfu__Q)
 
 ## 𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no Termux
 ```
