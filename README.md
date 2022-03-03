@@ -20,8 +20,7 @@ Um painel de consulta para facilitar sua vida e ajuda no dia a dia!
 ✔️**Consultas DDD**
 
 ✔️**Situação sobre a covid19**
-
-[!]({https://youtu.be/QNJL6nfu__Q} "Link Title")
+({https://youtu.be/QNJL6nfu__Q} "Link Title")
 
 ## 𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no Termux
 ```
