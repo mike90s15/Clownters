@@ -1,11 +1,8 @@
 # © 𝙋𝙖𝙞𝙣𝙚𝙡 𝘾𝙡𝙤𝙬𝙣𝙩𝙚𝙧𝙨 ®
-
-![](https://user-images.githubusercontent.com/82988362/153673468-cc24f71f-be25-4de8-9ca6-d847341ae0cc.jpg)
-
+[![](https://user-images.githubusercontent.com/82988362/153673468-cc24f71f-be25-4de8-9ca6-d847341ae0cc.jpg)](https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA)
   A organização Clownters lança seu primeiro painel de consulta
 Um painel de consulta para facilitar sua vida e ajuda no dia a dia! 
 100% feito em bash (Shell script) como função deixar mias fácil ao uso na plataforma, aliás os Linux e o Termux já ver com o Shell por padrão...
-
 ## **Funções**
 - [x] **Consulta por número**
 - [x] **Consulta por CNPJ**
@@ -17,9 +14,6 @@ Um painel de consulta para facilitar sua vida e ajuda no dia a dia!
 - [x] **Gerado de CPF**
 - [x] **Gerado de CNPJ**
 - [x] **Gerado de RG**
-
-
-
 ## 𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no Termux
 ```
 pkg update -y && pkg upgrade -y
