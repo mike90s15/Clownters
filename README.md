@@ -6,20 +6,14 @@
 Um painel de consulta para facilitar sua vida e ajuda no dia a dia! 
 100% feito em bash (Shell script) como função deixar mias fácil ao uso na plataforma, aliás os Linux e o Termux já ver com o Shell por padrão...
 
-## ✔️**Funções**
-✔️**Consulta por número**
-
-✔️**Consulta por CNPJ**
-
-✔️**Consulta IP**
-
-✔️**Consulta CEP**
-
-✔️**Consulta Bancaria**
-
-✔️**Consultas DDD**
-
-✔️**Situação sobre a covid19**
+## **Funções**
+- [x] **Consulta por número**
+- [x] **Consulta por CNPJ**
+- [x] **Consulta IP**
+- [x] **Consulta CEP**
+- [x] **Consulta Bancaria**
+- [x] **Consultas DDD**
+- [x] **Situação sobre a covid19**
 
 [](https://youtu.be/QNJL6nfu__Q)
 
