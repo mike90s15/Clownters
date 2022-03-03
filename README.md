@@ -40,3 +40,9 @@ bash A1.sh
 ### [𝙒𝙝𝙖𝙩𝙨𝙖𝙥𝙥](https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt)
 ### [𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢](https://t.me/CLOWNTERS)
 ### [YouTube](https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA)
+
+
+
+
+
+[![Alternate Text]({image-url})](https://youtube.com/shorts/PUJi4p88dw4?feature=share "Link Title")
