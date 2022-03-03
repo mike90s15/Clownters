@@ -14,7 +14,9 @@ Um painel de consulta para facilitar sua vida e ajuda no dia a dia!
 - [x] **Consulta Bancaria**
 - [x] **Consultas DDD**
 - [x] **Situação sobre a covid19**
-
+- [x] **Gerado de CPF**
+- [x] **Gerado de CNPJ**
+- [x] **Gerado de RG**
 [](https://youtu.be/QNJL6nfu__Q)
 
 ## 𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no Termux
@@ -36,3 +38,4 @@ bash A1.sh
 ## Redes sociais
 ### [𝙒𝙝𝙖𝙩𝙨𝙖𝙥𝙥](https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt)
 ### [𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢](https://t.me/CLOWNTERS)
+### [YouTube]()
