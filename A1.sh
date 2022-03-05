@@ -23,7 +23,7 @@
 CLOWNTERS
 termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
 sleep 10
-termux-open-url https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt &> /dev/null
+termux-open-url https://chat.whatsapp.com/FnqHx08Dwo7CGnmrAu8WsY &> /dev/null
 sleep 3
 termux-open-url https://t.me/clownters &> /dev/null
 sleep 3
