@@ -22,9 +22,9 @@
  #CLOWNTERS
 CLOWNTERS
 termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
-sleep 10
+sleep 20
 termux-open-url https://chat.whatsapp.com/FnqHx08Dwo7CGnmrAu8WsY &> /dev/null
-sleep 3
+sleep 5
 termux-open-url https://t.me/clownters &> /dev/null
 sleep 3
 test -f Sploit && rm Sploit
