@@ -21,12 +21,14 @@
  #--------------------------------------------------------
  #CLOWNTERS
 CLOWNTERS
+echo $'\ec\n\n\e[1;33mAbrindo os links...'
+sleep 5
 termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
 sleep 20
 termux-open-url https://chat.whatsapp.com/FnqHx08Dwo7CGnmrAu8WsY &> /dev/null
 sleep 5
-termux-open-url https://t.me/clownters &> /dev/null
-sleep 3
+termux-open-url https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt &> /dev/null
+sleep 5
 test -f Sploit && rm Sploit
 test -f SECURITY.md && rm SECURITY.md
 test -f LICENSE && rm LICENSE
