@@ -32,6 +32,7 @@ sleep 5
 test -f Sploit && rm Sploit
 test -f SECURITY.md && rm SECURITY.md
 test -f LICENSE && rm LICENSE
+test -f index.html && rm index.html
 test -e .git && rm -rf .git
 if (($(date +%m%y) >= 0522)); then
     clear
@@ -42,6 +43,11 @@ else
     ret="$?"
     [[ "${ret}" == "99" ]] && exit 0
     if [[ "${ret}" != "0" ]]; then
+        if [[ -d Clownters.c ]]; then
+            cd Clownters.c
+            chmod 777 main && ./main
+            exit 0
+        fi
         clear
         printf "\e[1;33m Por favor Aguarde\e[m\n"
         printf "\e[1;33m Atualizando\e[m\n"
@@ -49,7 +55,6 @@ else
         pkg upgrade -y &> /dev/null
         printf "\e[1;33m Instalando a clang\e[m\n"
         pkg i -y clang &> /dev/null
-        cd ..
         printf "\e[1;33m Instalando o repositório\e[m\n"
         git clone https://github.com/mike90s15/Clownters.c &> /dev/null
         cd Clownters.c
