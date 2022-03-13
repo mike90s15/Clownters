@@ -4,16 +4,25 @@
 Um painel de consulta para facilitar sua vida e ajuda no dia a dia! 
 100% feito em bash (Shell script) como função deixar mias fácil ao uso na plataforma, aliás os Linux e o Termux já ver com o Shell por padrão...
 ## **Funções**
-- [x] **Consulta por número**
-- [x] **Consulta por CNPJ**
-- [x] **Consulta IP**
-- [x] **Consulta CEP**
-- [x] **Consulta Bancaria**
-- [x] **Consultas DDD**
-- [x] **Situação sobre a covid19**
-- [x] **Gerado de CPF**
-- [x] **Gerado de CNPJ**
-- [x] **Gerado de RG**
+- [x] *Consulta de banco*
+- [x] *Consulta de bin*           
+- [x] *Consulta de CEP*     
+- [x] *Consulta de CNPJ*       
+- [x] *Consulta de Covid19*   
+- [x] *Consulta de DDD*         
+- [x] *Consulta de IP*          
+- [ ] *Consulta de nome*           
+- [x] *Consulta de telefone*       
+- [x] *Criar script*               
+- [x] *Gerador de CPF*            
+- [x] *Gerador de CNPJ*    
+- [x] *Gerador de RG*             
+- [x] *Scanear portas*      
+- [x] *Temrux tema*          
+- [x] *Válidador de CPF*     
+- [x] *Válidador de CNPJ*    
+- [x] *Válidador de RG*
+- [x] *Manual Termux*
 ## 𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no Termux
 ```
 pkg update -y && pkg upgrade -y
