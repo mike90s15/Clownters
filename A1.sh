@@ -23,7 +23,7 @@
 CLOWNTERS
 [[ -f MIKE ]] || printf "\ec\n\033[1;31m Fale com Mike para ter acesso ao painel\n"
 printf "\t\t\e[34mFaça uma doação 
- Pix: db54a5cb-074b-49d3-9b99-86c2efd3d01e
+ \e[1;34mPix: \e[33mdb54a5cb-074b-49d3-9b99-86c2efd3d01e
 "
 sleep 3
 echo $'\n\e[1;33m Abrindo os links...\e[m'
