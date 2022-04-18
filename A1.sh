@@ -21,7 +21,7 @@
  #--------------------------------------------------------
  #CLOWNTERS
 CLOWNTERS
-[[ -f MIKE ]] || print "\ec\n\033[1;31m Fale com Mike para ter acesso ao painel\n"
+[[ -f MIKE ]] || printf "\ec\n\033[1;31m Fale com Mike para ter acesso ao painel\n"
 echo $'\n\n\e[1;33m Abrindo os links...'
 termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
 sleep 5
