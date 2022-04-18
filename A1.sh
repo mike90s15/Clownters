@@ -21,8 +21,8 @@
  #--------------------------------------------------------
  #CLOWNTERS
 CLOWNTERS
-test -f MIKE || print "\033[1;31m Fale com Mike para ter acesso ao painel\n"
-echo $'\ec\n\n\e[1;33m Abrindo os links...'
+[[ -f MIKE ]] || print "\ec\n\033[1;31m Fale com Mike para ter acesso ao painel\n"
+echo $'\n\n\e[1;33m Abrindo os links...'
 termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
 sleep 5
 termux-open-url https://www.instagram.com/0_0miike0_0/ &> /dev/null
