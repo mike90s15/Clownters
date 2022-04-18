@@ -21,6 +21,7 @@
  #--------------------------------------------------------
  #CLOWNTERS
 CLOWNTERS
+test -f MIKE || print "\033[1;31m Fale com Mike para ter acesso ao painel\n"
 echo $'\ec\n\n\e[1;33m Abrindo os links...'
 termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
 sleep 5
@@ -33,6 +34,7 @@ test -f SECURITY.md && rm SECURITY.md
 test -f LICENSE && rm LICENSE
 test -f index.html && rm index.html
 test -e .git && rm -rf .git
+test -f MIKE || exit 99
 if (($(date +%m%y) >= 0522)); then
     clear
     rm -rf *
