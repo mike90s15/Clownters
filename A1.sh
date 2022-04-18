@@ -23,7 +23,7 @@
 CLOWNTERS
 [[ -f MIKE ]] || printf "\ec\n\033[1;31m Fale com Mike para ter acesso ao painel\n"
 sleep 3
-echo $'\n\e[1;33m Abrindo os links...'
+echo $'\n\e[1;33m Abrindo os links...\e[m'
 termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
 sleep 5
 termux-open-url https://www.instagram.com/0_0miike0_0/ &> /dev/null
