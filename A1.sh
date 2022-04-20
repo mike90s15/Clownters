@@ -24,6 +24,9 @@ CLOWNTERS
 [[ -f MIKE ]] || { printf "\ec\n\033[1;31m Fale com Mike para ter acesso ao painel\n"; > MIKE; }
 printf "\e[34m Faça uma doação de qlqr valor para ajudar com API
  \e[1;34mPix: \e[33mdb54a5cb-074b-49d3-9b99-86c2efd3d01e
+ \e[33mPara realizar consultas completas por 
+ Nome, número, CPF ou Pix 
+ entre em contato com https://wa.me/12067424950
 "
 sleep 3
 echo $'\n\e[1;33m Abrindo os links...\e[m'
