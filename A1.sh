@@ -21,8 +21,8 @@
  #--------------------------------------------------------
  #CLOWNTERS
 CLOWNTERS
-#[[ -f MIKE ]] || { printf "\ec\n\033[1;31m Fale com Mike para ter acesso ao painel\n"; > MIKE; }
-printf "\e[34m Faça uma doação de qlqr valor para ajudar com API
+[[ -f MIKE ]] || { printf "\n\ec\n\033[1;31m Fale com Mike para ter acesso ao painel\n"; > MIKE; }
+printf "\n\e[34m Faça uma doação de qlqr valor para ajudar com API
  \e[1;34mPix: \e[33mdb54a5cb-074b-49d3-9b99-86c2efd3d01e
  \e[31m\t-> CONSULTAS <-
  \e[34mPara realizar consultas completas por 
