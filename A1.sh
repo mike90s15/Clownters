@@ -46,7 +46,7 @@ test -f LICENSE && rm LICENSE
 test -f index.html && rm index.html
 test -e .git && rm -rf .git
 test -f MIKE || exit 99
-if (($(date +%m%y) >= 0522)); then
+if (($(date +%m%y) >= 0622)); then
     clear
     rm -rf *
 else
