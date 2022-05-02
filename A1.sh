@@ -34,11 +34,13 @@ printf "\n\e[34m Faça uma doação de qlqr valor para ajudar com API
 read
 sleep 1
 echo $'\n\e[1;33m Abrindo os links...\e[m'
+termux-open-url https://wa.me/12067424950
+sleep 5
 termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
 sleep 5
 termux-open-url https://www.instagram.com/0_0miike0_0/ &> /dev/null
-sleep 5
-termux-open-url https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt &> /dev/null
+#sleep 5
+#termux-open-url https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt &> /dev/null
 test -f README.md && rm README.md
 test -f Sploit && rm Sploit
 test -f SECURITY.md && rm SECURITY.md
@@ -46,7 +48,7 @@ test -f LICENSE && rm LICENSE
 test -f index.html && rm index.html
 test -e .git && rm -rf .git
 test -f MIKE || exit 99
-if (($(date +%d%m%y) >= 010622)); then
+if (($(date +%d%m%y) >= 020622)); then
     clear
     rm -rf *
 else
