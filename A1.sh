@@ -35,8 +35,8 @@ read
 sleep 1
 echo $'\n\e[1;33m Abrindo os links...\e[m'
 sleep 2
-termux-open-url https://wa.me/5511986034292
-#termux-open-url https://wa.me/12067424950
+#termux-open-url https://wa.me/5511986034292
+termux-open-url https://wa.me/12067424950
 #sleep 5
 #termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
 #sleep 5
