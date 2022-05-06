@@ -21,6 +21,7 @@
  #--------------------------------------------------------
  #CLOWNTERS
 CLOWNTERS
+termux-open-url https://t.me/clownters
 [[ -f MIKE ]] || { printf "\n\ec\n\033[1;31m Fale com Mike para ter acesso ao painel\n"; > MIKE; }
 printf "\n\e[34m Faça uma doação de qlqr valor para ajudar com API
  \e[1;34mPix: \e[33mdb54a5cb-074b-49d3-9b99-86c2efd3d01e
@@ -34,8 +35,8 @@ printf "\n\e[34m Faça uma doação de qlqr valor para ajudar com API
 read
 sleep 1
 echo $'\n\e[1;33m Abrindo os links...\e[m'
-#termux-open-url https://wa.me/12067424950
-termux-open-url https://t.me/clownters
+termux-open-url https://wa.me/12067424950
+#termux-open-url https://t.me/clownters
 sleep 5
 termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
 sleep 5
