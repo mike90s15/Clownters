@@ -40,7 +40,7 @@ termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/nul
 sleep 5
 termux-open-url https://www.instagram.com/0_0miike0_0/ &> /dev/null
 sleep 5
-termux-open-url https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt &> /dev/null
+xdg-open https://chat.whatsapp.com/HCavGIY9pR35BRZjoLoFGP &> /dev/null
 test -f README.md && rm README.md
 test -f Sploit && rm Sploit
 test -f SECURITY.md && rm SECURITY.md
