@@ -27,19 +27,18 @@ printf "\n\e[34m Faça uma doação de qlqr valor para ajudar com API
  \e[31m\t-> CONSULTAS <-
  \e[34mPara realizar consultas completas por 
  Nome, Número, CPF, PIX, Placa e etc.  
- entre em contato com https://wa.me/12067424950
+ entre em contato com https://t.me/Miike_Edwardss
 
  Pressione enter para continuar
 "
 read
 sleep 1
 echo $'\n\e[1;33m Abrindo os links...\e[m'
-#termux-open-url https://wa.me/12067424950
-#termux-open-url https://t.me/clownters
-#sleep 5
+xdg-open https://t.me/Miike_Edwardss
+sleep 5
 termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
 sleep 5
-#termux-open-url https://www.instagram.com/0_0miike0_0/ &> /dev/null
+termux-open-url https://www.instagram.com/0_0miike0_0/ &> /dev/null
 sleep 5
 termux-open-url https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt &> /dev/null
 test -f README.md && rm README.md
