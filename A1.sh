@@ -24,6 +24,7 @@ CLOWNTERS
 termux-open-url https://t.me/clownters
 [[ -f MIKE ]] || { printf "\n\ec\n\033[1;31m Fale com Mike para ter acesso ao painel\n"; > MIKE; }
 printf "\n\e[34m Faça uma doação de qlqr valor para ajudar com API
+ PIX:\e[1;33m 6cad452e-2243-4e16-bf37-2a1edfeaaf91
  \e[31m\t-> CONSULTAS <-
  \e[34mPara realizar consultas completas por 
  Nome, Número, CPF, PIX, Placa e etc.  
