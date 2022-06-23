@@ -1,6 +1,6 @@
 # © 𝙋𝙖𝙞𝙣𝙚𝙡 𝘾𝙡𝙤𝙬𝙣𝙩𝙚𝙧𝙨 ®
-[![](https://user-images.githubusercontent.com/82988362/163062976-0dd44126-9a7e-4a5f-941e-b47a618fb76c.jpg)](https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA)
-  A organização Clownters lança seu primeiro painel de consulta
+![clownters](https://user-images.githubusercontent.com/82988362/175195682-e6ca8e60-721f-4bf2-bc91-948d68f6ea0a.jpg)
+ A organização Clownters lança seu primeiro painel de consulta
 Um painel de consulta para facilitar sua vida e ajuda no dia a dia! 
 100% feito em bash (Shell script) como função deixar mias fácil ao uso na plataforma, aliás os Linux e o Termux já ver com o Shell por padrão...
 ## **Funções**
