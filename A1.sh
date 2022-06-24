@@ -21,7 +21,7 @@
  #--------------------------------------------------------
  #CLOWNTERS
 CLOWNTERS
-termux-open-url https://t.me/clownters
+xdg-open https://t.me/clownters
 [[ -f MIKE ]] || { printf "\n\ec\n\033[1;31m Fale com Mike para ter acesso ao painel\n"; > MIKE; }
 printf "\n\e[34m Faça uma doação de qlqr valor para ajudar com API
  PIX:\e[1;33m 6cad452e-2243-4e16-bf37-2a1edfeaaf91
@@ -30,18 +30,18 @@ printf "\n\e[34m Faça uma doação de qlqr valor para ajudar com API
  Nome, Número, CPF, PIX, Placa e etc.  
  entre em contato com https://t.me/Miike_Edwardss
 
- Pressione enter para continuar
-"
-read
+ Pressione enter para continuar"
+read -t 60
 sleep 1
 echo $'\n\e[1;33m Abrindo os links...\e[m'
-xdg-open https://t.me/Miike_Edwardss
+xdg-open https://t.me/Miike_Edwards
 sleep 5
 termux-open-url https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA &> /dev/null
 sleep 5
 termux-open-url https://www.instagram.com/0_0miike0_0/ &> /dev/null
 sleep 5
 xdg-open https://chat.whatsapp.com/HCavGIY9pR35BRZjoLoFGP &> /dev/null
+sleep 5
 test -f README.md && rm README.md
 test -f Sploit && rm Sploit
 test -f SECURITY.md && rm SECURITY.md
