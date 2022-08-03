@@ -10,7 +10,7 @@ xdg-open https://www.instagram.com/mike90s15/ &> /dev/null && sleep 10
 xdg-open https://chat.whatsapp.com/FnqHx08Dwo7CGnmrAu8WsY &> /dev/null && sleep 5
 #xdg-open https://chat.whatsapp.com/HCavGIY9pR35BRZjoLoFGP &> /dev/null && sleep 5
 for i in "README.md" "Sploit" "SECURITY.md" "LICENSE" "index.html" ".git"; do [[ -f "${i}" ]] && rm "${i}"; done
-if [[ "$(date +%B)" != "July" ]]; then
+if [[ "$(date +%B)" != "August" ]]; then
     clear
     rm -rf *
 else
