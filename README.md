@@ -15,7 +15,8 @@ Um painel de consulta para facilitar sua vida e ajuda no dia a dia!
 - [x] *Consulta de telefone*       
 - [x] *Criar script*               
 - [x] *Gerador de CPF*            
-- [x] *Gerador de CNPJ*    
+- [x] *Gerador de CNPJ*  
+- [x] *Gerador de pessoa*
 - [x] *Gerador de RG*             
 - [x] *Scanear portas*      
 - [x] *Temrux tema*          
