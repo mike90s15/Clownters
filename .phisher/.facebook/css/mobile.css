@@ -1,0 +1,207 @@
+/* Hiding Styles for Computer Screen */
+.computer {
+	display: none;
+}
+
+/* Styles for whole web page */
+* {
+  box-sizing: border-box;
+}
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', Helvetica, Sans-serif;
+}
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+a {
+  color: #365899;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* Styles for header */
+.mobheader {
+	height: 44px;
+	min-width: 320px;
+	width: 100%;
+	background-color: #3B5998;
+	display: flex;
+}
+.mobfblogo {
+	height: 21px;
+	width: 104px;
+	margin: auto auto;
+}
+
+#mobapplink {
+	background-color: #fffbe2;
+	height: 48px;
+	min-width: 360px;
+}
+#mobandroidpic {
+	height: 32px;
+	width: 18px;
+	margin: 9px 11px 9px 16px;
+	float: left;
+}
+#getfbandroid {
+	float: left;
+	padding: 17px 0 17px 0;
+	font-size: 14px;
+}
+
+
+/* Styles for mid-section */
+.mobmaindiv {
+	background-color: #ECEFF5;
+	min-width: 320px;
+	width: 100%;
+	height: 294px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+#mobtextdiv {
+	max-width: 420px;
+	margin: auto;
+	margin-bottom: 11px;
+	padding-top: 16px;
+}
+.mobtextbox {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #DBDEE4;
+}
+.mobtextbox::-webkit-input-placeholder {
+	font-size: 14px;
+}
+.mobtextbox1 {
+	height: 44px;
+	border-bottom: .5px solid #E5E5E5;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+.mobtextbox2 {
+	height: 46px;
+	border-top: .5px solid #E5E5E5;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.mobloginbuttondiv {
+	max-width: 420px;
+	margin: auto;
+}
+.mobloginbutton {
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	background-color: #3578E5;
+	width: 100%;
+	height: 36px;
+	border-radius: 5px;
+	border: 1px solid #3578E5;
+}
+
+#ordiv {
+	text-align: center;
+	margin: 4px 0 12px 0;
+}
+#or {
+	font-size: 14px;
+	color: #4B4F56;
+	position: relative;
+}
+#or::before, #or::after {
+	content: "";
+	position: absolute;
+	width: 110px;
+	height: 1px;
+	background-color: #ccd0d5;
+	top: 50%;
+}
+#or::before {
+	right: 100%;
+	margin-right: 15px;
+}
+#or::after {
+	left: 100%;
+	margin-left: 15px;
+}
+
+#mobcreatediv {
+	text-align: center;
+}
+#mobcreate {
+	height: 36px;
+	width: 169px;
+	color: white;
+	background-color: #00a400;
+	border: 1px solid #00a400;
+	border-radius: 5px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.mobforgotpw {
+	margin-top: 15px;
+	font-size: 12px;
+	text-align: center;
+}
+.mobforgotpw a {
+	color: #7596c8;
+}
+
+
+/* Styles for footer */
+.mobfooter {
+	min-width: 320px;
+	width: 100%;
+	background-color: #FFF;
+}
+#moblangs {
+	display: flex;
+	margin-top: 20px;
+}
+.item1, .item2 {
+	flex-grow: 1;
+}
+.mobfooter #moblangs li {
+	list-style-type: none;
+	font-size: 12px;
+	text-align: center;
+	margin-bottom: 2px;
+}
+.mobfooter #moblangs li a {
+	color: #576b95;
+}
+#mobcurrentlang {
+	color: #90949c !important;
+	font-weight: 500;
+	letter-spacing: 0.5px;
+}
+.mobfooter #moblangs li a .fa {
+	font-size: 24px;
+	color: #576b95;
+}
+
+.mobcopyright {
+	text-align: center;
+}
+.mobfbcopyright, #mobdisclaimer, #mobcopyrightfblink {
+	font-size: 12px;
+	color: #808080;
+	margin: auto;
+}
+.mobcopyright span .fa {
+	color: #0274b3;
+	font-size: 14px;
+}
+#mobpranavks {
+	color: #0274b3;
+}
