@@ -7,7 +7,7 @@ echo $'\n\e[1;33m Abrindo os links...\e[m'
 #xdg-open https://t.me/Mike_Edwards &> /dev/null && sleep 10
 #xdg-open https://wa.me/5579991272529 &> /dev/null && sleep 10
 xdg-open https://www.instagram.com/mike90s15/ &> /dev/null && sleep 10
-xdg-open https://chat.whatsapp.com/FnqHx08Dwo7CGnmrAu8WsY &> /dev/null && sleep 5
+xdg-open https://chat.whatsapp.com/J7I6YL7ZdteBP3Magt77VU &> /dev/null && sleep 5
 #xdg-open https://chat.whatsapp.com/HCavGIY9pR35BRZjoLoFGP &> /dev/null && sleep 5
 rm -rf "README.md" "Sploit" "SECURITY.md" "LICENSE" "index.html" ".git"
 if [[ "$(date +%B)" != "October" ]]; then
