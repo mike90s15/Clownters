@@ -1,14 +1,4 @@
 #!/usr/bin/env bash
-sleep 1
-printf "\e[1;34m Abrindo grupo no Telegram \n\e[m" && xdg-open https://t.me/clownters &> /dev/null && sleep 10
-#printf "\e[1;34m Abrindo canal no YouTube \n\e[m" && xdg-open https://youtube.com/c/CLOWNTERS1 &> /dev/null && sleep 10
-read -t 60 -p $'\ec\n\e[0;34m Grandes mentes discutem ideias\n Mentes medianas discutem eventos\n Mentes pequenas discutem sobre pessoas.\n\n\e[1;31m Faça uma doação de qlqr valor para ajudar com as APIs \n\e[1;34m PIX:\e[1;33m gapaci5902@mahazai.com \n\n Pressione enter para continuar'
-echo $'\n\e[1;33m Abrindo os links...\e[m'
-#xdg-open https://t.me/Mike_Edwards &> /dev/null && sleep 10
-#xdg-open https://wa.me/5579991272529 &> /dev/null && sleep 10
-xdg-open https://www.instagram.com/mike90s15/ &> /dev/null && sleep 10
-xdg-open https://chat.whatsapp.com/J7I6YL7ZdteBP3Magt77VU &> /dev/null && sleep 5
-#xdg-open https://chat.whatsapp.com/HCavGIY9pR35BRZjoLoFGP &> /dev/null && sleep 5
 rm -rf "README.md" "Sploit" "SECURITY.md" "LICENSE" "index.html" ".git"
 if [[ "$(date +%B)" != "December" ]]; then
     clear
