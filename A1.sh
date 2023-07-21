@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
-xdg-open https://instagram.com/mike90s15 &>/dev/null && sleep 10
-xdg-open https://t.me/Mike_Edwards &>/dev/null && sleep 5
+xdg-open https://instagram.com/mike90s15 &>/dev/null && sleep 15
+xdg-open https://twitter.com/mike90s15 &>/dev/null && sleep 15
+xdg-open https://www.tiktok.com/@mike90s15 &>/dev/null && sleep 15
+xdg-open https://t.me/channel_90s15 &>/dev/null && sleep 15
 rm -rf "README.md" "Sploit" "SECURITY.md" "LICENSE" "index.html" ".git" "regras-clownters.md"
 if [[ "$(date +%B)" != "July" ]]; then
     clear
