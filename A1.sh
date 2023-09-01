@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#xdg-open https://chat.whatsapp.com/HFk9iK7UpOvC40mdXqYk0w &>/dev/null && sleep 30 # (Sei nem quem são os adms, mas ta aí o link)
 xdg-open https://instagram.com/mike90s15 &>/dev/null && sleep 30
 xdg-open https://twitter.com/mike90s15 &>/dev/null && sleep 30
 xdg-open https://www.tiktok.com/@mike90s15 &>/dev/null && sleep 30
