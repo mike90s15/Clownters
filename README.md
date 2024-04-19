@@ -13,7 +13,7 @@ Um painel de consulta para facilitar sua vida e ajuda no dia a dia!
 - [x] *Consulta de DDD*         
 - [x] *Consulta de IP*          
 - [ ] *Consulta de nome*           
-- [x] *Consulta de telefone*       
+- [ ] *Consulta de telefone*       
 - [x] *Criar script*               
 - [x] *Gerador de CPF*            
 - [x] *Gerador de CNPJ*  
