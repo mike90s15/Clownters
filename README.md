@@ -1,4 +1,4 @@
-# © 𝙋𝙖𝙞𝙣𝙚𝙡 𝘾𝙡𝙤𝙬𝙣𝙩𝙚𝙧𝙨 ®
+
 
 <div>
 <Img src="https://user-images.githubusercontent.com/82988362/137607089-6215669e-3fd0-45ad-8156-d771068aa9f1.jpg"/>
@@ -45,4 +45,5 @@ bash A1.sh
 https://chat.whatsapp.com/EEpJ3seLYe3Ir7nGI8818m
 
 #### 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢:
-https://t.me/CLOWNTERS 
+https://t.me/CLOWNTERS
+6231138484
