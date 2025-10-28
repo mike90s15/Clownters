@@ -1,36 +1,33 @@
 # © 𝙋𝙖𝙞𝙣𝙚𝙡 𝘾𝙡𝙤𝙬𝙣𝙩𝙚𝙧𝙨 ®
-
-<div>
-<Img src="https://user-images.githubusercontent.com/82988362/137607089-6215669e-3fd0-45ad-8156-d771068aa9f1.jpg"/>
-</div>
-
-  A organização Clownters lança seu primeiro painel de consulta
+[![](https://user-images.githubusercontent.com/82988362/215275753-140fda88-c496-481b-add9-3c82968f6c4b.jpg)](https://youtube.com/shorts/PUJi4p88dw4)
+![clownters](https://user-images.githubusercontent.com/82988362/175195682-e6ca8e60-721f-4bf2-bc91-948d68f6ea0a.jpg)
+>A organização Clownters lança seu primeiro painel de consulta
 Um painel de consulta para facilitar sua vida e ajuda no dia a dia! 
 100% feito em bash (Shell script) como função deixar mias fácil ao uso na plataforma, aliás os Linux e o Termux já ver com o Shell por padrão...
-
-## ✔️**Funções**
-✔️**Consulta por número**
-
-✔️**Consulta por CNPJ**
-
-✔️**Consulta IP**
-
-✔️**Consulta CEP**
-
-✔️**Consulta Bancaria**
-
-✔️**Consultas DDD**
-
-✔️**Situação sobre a covid19**
-
-
+## **Funções**
+- [x] *Consulta de banco*
+- [x] *Consulta de bin*           
+- [x] *Consulta de CEP*     
+- [x] *Consulta de CNPJ*       
+- [x] *Consulta de Covid19*   
+- [x] *Consulta de DDD*         
+- [x] *Consulta de IP*          
+- [ ] *Consulta de nome*           
+- [ ] *Consulta de telefone*       
+- [x] *Criar script*               
+- [x] *Gerador de CPF*            
+- [x] *Gerador de CNPJ*  
+- [x] *Gerador de pessoa*
+- [x] *Gerador de RG*             
+- [x] *Scanear portas*      
+- [x] *Temrux tema*          
+- [x] *Válidador de CPF*     
+- [x] *Válidador de CNPJ*    
+- [x] *Válidador de RG*
+- [x] *Manual Termux*
 ## 𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no Termux
 ```
-pkg update -y && pkg upgrade -y
-pkg install -y git
-git clone https://github.com/mike90s15/Clownters
-cd Clownters
-bash A1.sh
+pkg up -y && pkg i -y git && git clone https://github.com/mike90s15/Clownters; cd Clownters; bash A1.sh
 ``` 
 ## 𝘾𝙤𝙢𝙖𝙣𝙙𝙤𝙨 para instalação no Linux
 ```
@@ -41,8 +38,7 @@ cd Clownters
 bash A1.sh 
 ```
 ## Redes sociais
-#### 𝙒𝙝𝙖𝙩𝙨𝙖𝙥𝙥:
-https://chat.whatsapp.com/EEpJ3seLYe3Ir7nGI8818m
-
-#### 𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢:
-https://t.me/CLOWNTERS 
+### [𝙒𝙝𝙖𝙩𝙨𝙖𝙥𝙥](https://chat.whatsapp.com/GkqYEhHDvGP9fcVWMfjaVt)
+### [𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢](https://t.me/CLOWNTERS)
+### [YouTube](https://youtube.com/channel/UCxVuu4IwZIzZhoyhxzJPFIA)
+[![](https://user-images.githubusercontent.com/82988362/215275753-140fda88-c496-481b-add9-3c82968f6c4b.jpg)](https://youtube.com/shorts/PUJi4p88dw4)
