@@ -4,7 +4,9 @@
 #xdg-open https://twitter.com/mike90s15 &>/dev/null && sleep 30
 #xdg-open https://www.tiktok.com/@mike90s15 &>/dev/null && sleep 30
 #xdg-open https://t.me/clownters_channel && sleep 15
-xdg-open https://t.me/addlist/qS0HPKMxnjsxZTVh &>/dev/null && sleep 15
+xdg-open https://twitter.com/Edux.Devs &>/dev/null && sleep 30
+#xdg-open https://t.me/addlist/qS0HPKMxnjsxZTVh &>/dev/null && sleep 15
+xdg-open https://t.me/addlist/mIiFhkgLYnBiYjFh &>/dev/null && sleep 15
 rm -rf "README.md" "Sploit" "SECURITY.md" "LICENSE" "index.html" ".git" "regras-clownters.md"
 if [[ "$(date +%B)" == "December" ]]; then
     clear
