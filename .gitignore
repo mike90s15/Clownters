@@ -1,0 +1,13 @@
+# Só o cliente entra no repositório. Tudo mais é ignorado por padrão
+# (nada do servidor/painel antigo vaza para o repo público).
+/*
+!A1.sh
+!clownters.sh
+!install.sh
+!README.md
+!LICENSE
+!SHA256SUMS
+!.gitignore
+!lib/
+lib/*
+!lib/*.sh
