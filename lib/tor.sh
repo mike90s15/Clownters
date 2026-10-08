@@ -66,25 +66,33 @@ clw_tor_autostart() {
 # ruim a gente espera em vez de falhar. Ajuste o prazo com CLW_ONION_WAIT (seg).
 clw_tor_wait_onion() {
     [[ -n "$CLW_API_URL" ]] && return 0      # API direta: sem Tor, nada a checar
-    local url code delay=2 waited=0 max avisou=0
+    local url code delay=2 max start elapsed shown=0
     max=${CLW_ONION_WAIT:-180}
     url="$(clw_base_url)/api/health"
-    while (( waited < max )); do
+    start=$SECONDS
+    while (( SECONDS - start < max )); do
         code=$(curl -s -o /dev/null -w '%{http_code}' \
                  --socks5-hostname "$CLW_SOCKS" \
                  --connect-timeout 20 --max-time 30 "$url" 2>/dev/null) || code=""
         if [[ -n "$code" && "$code" != "000" ]]; then
-            [[ "$avisou" == 1 ]] && clw_ok "Conectado à rede Tor."
+            if (( shown )); then printf '\n'; fi     # fecha a linha do contador
+            clw_ok "Conectado à rede Tor."
             return 0
         fi
-        if [[ "$avisou" == 0 ]]; then
-            clw_info "Conectando pela rede Tor... (na 1ª vez pode levar até ~${max}s)"
-            avisou=1
+        # Cabeçalho (uma vez): a citação vai na linha DE BAIXO — telas estreitas
+        # do Termux não quebram no meio.
+        if (( shown == 0 )); then
+            clw_info "Conectando pela rede Tor..."
+            clw_info "(na 1ª vez pode levar até ~${max}s)"
+            shown=1
         fi
+        # Contador de tempo vivo, atualizado NA MESMA linha (\r) p/ não rolar a tela.
+        elapsed=$(( SECONDS - start ))
+        printf '\r %b aguardando o circuito... %ds/%ds %b' "$C_CYA" "$elapsed" "$max" "$C_RESET"
         sleep "$delay"
-        waited=$(( waited + delay ))
         if (( delay < 8 )); then delay=$(( delay + 2 )); fi
     done
+    if (( shown )); then printf '\n'; fi              # sai da linha do contador
     return 1
 }
 
