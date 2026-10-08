@@ -57,11 +57,46 @@ clw_tor_autostart() {
     return 1
 }
 
-# Garante o SOCKS de pé: usa o que já existir (9050/9150) ou sobe o Tor sozinho.
+# Confirma que o onion responde de PONTA A PONTA. Ter o SOCKS aberto não basta:
+# no Termux o Tor demora a chegar em "Bootstrapped 100%" e o 1º request caía em
+# HTTP 000 (login disparava cedo demais). Aqui a gente faz um ping barato em
+# /api/health e INSISTE com backoff até o onion responder (qualquer código HTTP
+# já prova que o caminho está de pé) ou estourar o prazo. Disponibilidade acima
+# de velocidade: com a rede boa responde em ~1-2s e quase não pesa; com a rede
+# ruim a gente espera em vez de falhar. Ajuste o prazo com CLW_ONION_WAIT (seg).
+clw_tor_wait_onion() {
+    [[ -n "$CLW_API_URL" ]] && return 0      # API direta: sem Tor, nada a checar
+    local url code delay=2 waited=0 max avisou=0
+    max=${CLW_ONION_WAIT:-180}
+    url="$(clw_base_url)/api/health"
+    while (( waited < max )); do
+        code=$(curl -s -o /dev/null -w '%{http_code}' \
+                 --socks5-hostname "$CLW_SOCKS" \
+                 --connect-timeout 20 --max-time 30 "$url" 2>/dev/null) || code=""
+        if [[ -n "$code" && "$code" != "000" ]]; then
+            [[ "$avisou" == 1 ]] && clw_ok "Conectado à rede Tor."
+            return 0
+        fi
+        if [[ "$avisou" == 0 ]]; then
+            clw_info "Conectando pela rede Tor... (na 1ª vez pode levar até ~${max}s)"
+            avisou=1
+        fi
+        sleep "$delay"
+        waited=$(( waited + delay ))
+        if (( delay < 8 )); then delay=$(( delay + 2 )); fi
+    done
+    return 1
+}
+
+# Garante o caminho até a API: SOCKS de pé (o que já existir, ou sobe o Tor) E o
+# onion respondendo. Só volta 0 quando dá pra realmente falar com o servidor.
 clw_tor_ensure() {
     [[ -n "$CLW_API_URL" ]] && return 0     # API direta: não precisa de Tor
-    clw_tor_socks_up && return 0
-    clw_tor_autostart && return 0
-    clw_tor_guide
+    if ! clw_tor_socks_up && ! clw_tor_autostart; then
+        clw_tor_guide
+        return 1
+    fi
+    clw_tor_wait_onion && return 0
+    clw_err "A rede Tor demorou demais pra responder. Cheque sua internet e tente de novo."
     return 1
 }

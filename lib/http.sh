@@ -33,10 +33,26 @@ clw_http() {
         [[ "$method" == "GET" ]] && printf 'retry = 2\nretry-delay = 3\nretry-connrefused\n'
     } >"$cfg"
 
-    out=$(curl -K "$cfg" 2>/dev/null)
+    # HTTP 000 = sem resposta (circuito Tor não fechou a tempo). Como nada chegou
+    # ao servidor, repetir é seguro mesmo em POST; insiste com backoff antes de
+    # desistir — disponibilidade acima de velocidade. Um código HTTP real (200,
+    # 401, 500...) significa que o servidor respondeu: NÃO repete (não mascara
+    # senha errada nem duplica ação). Controle o nº de tentativas com CLW_HTTP_TRIES.
+    local tries attempt=0 delay=3
+    tries=${CLW_HTTP_TRIES:-3}
+    while :; do
+        out=$(curl -K "$cfg" 2>/dev/null)
+        CLW_HTTP_CODE=${out##*$'\n'}
+        CLW_HTTP_BODY=${out%$'\n'*}
+        attempt=$(( attempt + 1 ))
+        if [[ -n "$CLW_HTTP_CODE" && "$CLW_HTTP_CODE" != "000" ]]; then break; fi
+        if (( attempt >= tries )); then break; fi
+        sleep "$delay"
+        if (( delay < 12 )); then delay=$(( delay + 3 )); fi
+    done
     rm -f "$cfg"
-    CLW_HTTP_CODE=${out##*$'\n'}
-    CLW_HTTP_BODY=${out%$'\n'*}
+    # Sempre 0 quando há algum código (inclusive "000"): quem chama decide pelo
+    # CLW_HTTP_CODE. Retornar não-zero aqui derrubaria o painel sob `set -e`.
     [[ -n "$CLW_HTTP_CODE" ]]
 }
 

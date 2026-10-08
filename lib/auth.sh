@@ -91,7 +91,7 @@ clw_login() {
             ;;
         401) printf '\n \e[1;31m\aUsername ou password incorreto\a\n'; sleep 1 ;;
         429) clw_err "Muitas tentativas. Aguarde e tente de novo." ;;
-        "")  clw_err "Sem resposta do serviço (.onion fora do ar?)." ;;
+        ""|000) clw_err "Sem resposta via Tor; reconectando..."; clw_tor_wait_onion || true ;;
         *)   clw_err "Falha no login (HTTP $CLW_HTTP_CODE)." ;;
     esac
     return 1
@@ -126,11 +126,13 @@ clw_auth_ensure() {
         [[ "$CLW_HTTP_CODE" == "401" ]] || return 0   # sem rede: segue com a sessão salva
         rm -f "$CLW_TOKEN_FILE" "$CLW_REFRESH_FILE"
     fi
-    # 3 tentativas, como no painel antigo.
+    # Até 3 tentativas. Repete em senha errada (401) e também em queda de rede
+    # (000/"") — nesse caso o clw_login já tentou reconectar o Tor — para o 1º
+    # acesso no Termux não morrer num tropeço de circuito.
     local i
     for i in 1 2 3; do
         clw_login && return 0
-        [[ "$CLW_HTTP_CODE" == "401" && $i -lt 3 ]] || return 1
+        [[ ( "$CLW_HTTP_CODE" == "401" || "$CLW_HTTP_CODE" == "000" || -z "$CLW_HTTP_CODE" ) && $i -lt 3 ]] || return 1
         printf ' Digite Q para sair\n'; sleep 1
     done
 }
