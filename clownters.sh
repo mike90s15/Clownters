@@ -426,7 +426,7 @@ clw_main_menu() {
         clw_is_back "$op" && exit 0          # q ou 99: sai do script
         case "$op" in
             0|00) exit 0 ;;
-            95) CLW_UPDATED="" clw_self_update   # 95 também busca atualização do painel
+            95) clw_self_update manual          # 95 = atualização manual (com feedback, re-sync)
                 clw_load_profile || true; clw_load_modules || true ;;
             96) if [[ "$CLW_ROLE" == "admin" ]]; then clw_admin_menu; else clw_invalida; fi ;;
             97) clw_banner; clw_info "Telegram: https://t.me/ClowntersPainelBot"; echo; clw_retorne_menu || true ;;
