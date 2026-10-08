@@ -34,18 +34,23 @@ clw_self_update() {
         return 0
     fi
 
-    local to="" branch local_ remoto secs=12
-    [[ -n "$manual" ]] && secs=30                                        # manual: mais paciência c/ rede móvel
+    local to="" branch local_ remoto secs=20
+    [[ -n "$manual" ]] && secs=30                                        # manual: ainda mais paciência
     command -v timeout >/dev/null 2>&1 && to="timeout $secs"            # offline não trava
 
     branch=$(git -C "$SCRIPT_DIR" rev-parse --abbrev-ref HEAD 2>/dev/null || echo main)
     [[ -z "$branch" || "$branch" == "HEAD" ]] && branch="main"
 
-    [[ -n "$manual" ]] && clw_info "Buscando atualização..."
-    # Busca o estado remoto (silencioso no auto; sem rede, segue na versão atual).
+    # Transparente SEMPRE (inclusive no boot): o usuário vê que estamos checando a
+    # versão a cada início. Prioridade é pegar a última versão, não a pressa.
+    clw_info "Verificando atualização..."
+    # Busca o estado remoto. Rede ruim: tenta 2x antes de seguir na versão atual.
     if ! $to git -C "$SCRIPT_DIR" fetch --quiet origin "$branch" 2>/dev/null; then
-        [[ -n "$manual" ]] && clw_warn "Sem conexão pra atualizar agora; seguindo na versão atual."
-        return 0
+        sleep 1
+        if ! $to git -C "$SCRIPT_DIR" fetch --quiet origin "$branch" 2>/dev/null; then
+            clw_warn "Sem conexão pra atualizar; abrindo na versão atual."
+            return 0
+        fi
     fi
     local_=$(git -C "$SCRIPT_DIR" rev-parse HEAD 2>/dev/null) || return 0
     remoto=$(git -C "$SCRIPT_DIR" rev-parse "origin/$branch" 2>/dev/null) || return 0
