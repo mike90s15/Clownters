@@ -66,7 +66,10 @@ clw_self_update() {
     # Espelha exatamente o remoto (aguenta force-push / histórico reescrito).
     if git -C "$SCRIPT_DIR" reset --hard --quiet "origin/$branch" 2>/dev/null; then
         clw_ok "Painel atualizado. Reiniciando..."
-        sleep 1
+        # Changelog curto: 1ª linha do NOVIDADES.txt (já na versão nova após o reset).
+        [[ -s "$SCRIPT_DIR/NOVIDADES.txt" ]] && \
+            clw_info "Novidades: $(head -n1 "$SCRIPT_DIR/NOVIDADES.txt")"
+        sleep 2
         CLW_UPDATED=1 exec bash "$SCRIPT_DIR/clownters.sh"               # reinicia já na versão nova
     else
         clw_warn "Não consegui atualizar agora; seguindo na versão atual."

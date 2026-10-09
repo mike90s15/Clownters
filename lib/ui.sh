@@ -58,10 +58,27 @@ clw_render_data() {
     done
 }
 
-clw_info()  { printf ' %b%b%b\n' "$C_CYA" "$1" "$C_RESET"; }
-clw_ok()    { printf ' %b%b%b\n' "$C_GRN" "$1" "$C_RESET"; }
-clw_warn()  { printf ' %b%b%b\n' "$C_YEL" "$1" "$C_RESET"; }
-clw_err()   { printf ' %b%b%b\n' "$C_RED" "$1" "$C_RESET" >&2; }
+# Emite uma mensagem já QUEBRADA pra telas estreitas (Termux): parte só em
+# espaços (nunca corta palavra/URL no meio) numa largura segura. Override pela
+# env CLW_WIDTH (padrão 46). Preserva quebras que já existam no texto.
+_clw_emit() {
+    local color=$1 text=$2 to=${3:-} line w=${CLW_WIDTH:-46}
+    local -a out=()
+    if command -v fold >/dev/null 2>&1; then
+        while IFS= read -r line || [[ -n "$line" ]]; do out+=("$line"); done \
+            < <(printf '%s\n' "$text" | fold -s -w "$w")
+    else
+        out=("$text")
+    fi
+    for line in "${out[@]}"; do
+        if [[ "$to" == err ]]; then printf ' %b%b%b\n' "$color" "$line" "$C_RESET" >&2
+        else                        printf ' %b%b%b\n' "$color" "$line" "$C_RESET"; fi
+    done
+}
+clw_info()  { _clw_emit "$C_CYA" "$1"; }
+clw_ok()    { _clw_emit "$C_GRN" "$1"; }
+clw_warn()  { _clw_emit "$C_YEL" "$1"; }
+clw_err()   { _clw_emit "$C_RED" "$1" err; }
 
 # "q" (maiúsculo ou minúsculo) e 99 voltam/saem em qualquer tela, como no painel antigo.
 clw_is_back() { [[ "${1,,}" == q || "$1" == 99 ]]; }

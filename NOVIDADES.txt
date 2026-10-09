@@ -1,0 +1,1 @@
+Conexão Tor mais estável, atualização automática ao abrir e menus prontos pra tela do celular.

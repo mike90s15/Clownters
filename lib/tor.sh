@@ -105,6 +105,13 @@ clw_tor_ensure() {
         return 1
     fi
     clw_tor_wait_onion && return 0
-    clw_err "A rede Tor demorou demais pra responder. Cheque sua internet e tente de novo."
+    # Quase sempre é um Tor travado/pela metade segurando o SOCKS. Dá o passo
+    # exato em vez de um aviso genérico.
+    clw_err "A rede Tor demorou demais."
+    clw_info "Costuma ser o Tor travado. Faça assim:"
+    clw_info "1) rode:  pkill tor && tor"
+    clw_info "2) espere aparecer: Bootstrapped 100%"
+    clw_info "3) abra o painel de novo"
+    clw_info "Se não resolver, troque Wi-Fi / dados."
     return 1
 }
