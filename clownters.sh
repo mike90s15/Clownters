@@ -199,6 +199,38 @@ clw_sub_menu() {
     done
 }
 
+# Submenu de canais de contato (opção 97). Vem da API (GET /api/canais) para os
+# links ficarem sempre atualizados sem republicar o painel; se a API não
+# responder, usa um conjunto local de reserva. Selecionar o número abre o link.
+clw_canais_menu() {
+    local op i lab url
+    local -a L=() U=()
+    if clw_api_get "/api/canais" \
+        && printf '%s' "$CLW_HTTP_BODY" | jq -e '.canais | length > 0' >/dev/null 2>&1; then
+        while IFS=$'\t' read -r lab url; do L+=("$lab"); U+=("$url"); done \
+            < <(printf '%s' "$CLW_HTTP_BODY" | jq -r '.canais[] | "\(.label)\t\(.url)"')
+    else
+        L=("Telegram" "Instagram"); U=("$CLW_BOT_URL" "$CLW_INSTAGRAM_URL")
+    fi
+    while :; do
+        clw_banner
+        for i in "${!L[@]}"; do clw_item "$(printf '%02d' $((i + 1)))" "${L[i]}"; done
+        printf '\n'
+        clw_item 98 "Retornar ao menu" "$C_RED"
+        clw_item 99 "Sair do script" "$C_RED"
+        clw_prompt; read -r op || exit 0
+        case "$op" in 99|0|00) exit 0 ;; 98) return 0 ;; esac
+        clw_is_back "$op" && return 0
+        if [[ "$op" =~ ^[0-9]+$ ]] && ((10#$op >= 1 && 10#$op <= ${#L[@]})); then
+            clw_info "Abrindo ${L[10#$op - 1]}..."
+            clw_abrir_link "${U[10#$op - 1]}"
+            sleep 1
+        else
+            clw_invalida
+        fi
+    done
+}
+
 # --- Painel admin -----------------------------------------------------------
 
 # Pergunta no layout do painel. Retorna 1 se digitou q (voltar).
@@ -349,6 +381,83 @@ clw_admin_delete() {
         || clw_err "$(clw_api_detail 'Não consegui remover.')"
 }
 
+# Gerenciar canais de contato (admin): listar, adicionar, editar link e remover.
+# Grava na API (/api/admin/canais); o menu "Canais" de todos os clientes passa a
+# refletir na hora, sem republicar o painel.
+clw_admin_canais() {
+    local op sel lab url c n i cid
+    local -a ID LB URL
+    while :; do
+        ID=(); LB=(); URL=()
+        if clw_api_get "/api/admin/canais"; then
+            while IFS=$'\t' read -r cid lab url; do
+                ID+=("$cid"); LB+=("$lab"); URL+=("$url")
+            done < <(printf '%s' "$CLW_HTTP_BODY" | jq -r '.[] | "\(.id)\t\(.label)\t\(.url)"')
+        fi
+        n=${#ID[@]}
+        clw_banner
+        if ((n == 0)); then
+            clw_warn "Nenhum canal cadastrado ainda."
+        else
+            for ((i = 0; i < n; i++)); do
+                clw_item "$(printf '%02d' $((i + 1)))" "${LB[i]}"
+                clw_info "   ${URL[i]}"
+            done
+        fi
+        printf '\n'
+        clw_item "A" "Adicionar canal"
+        clw_item "E" "Editar link"
+        clw_item "R" "Remover canal"
+        clw_item 98 "Retornar ao menu" "$C_RED"
+        clw_item 99 "Sair do script" "$C_RED"
+        clw_prompt; read -r op || exit 0
+        case "${op,,}" in
+            99|0|00) exit 0 ;;
+            98|q) return 0 ;;
+            a)
+                clw_ask "Nome do canal (ex.: Instagram)" lab || continue
+                [[ -n "${lab// /}" ]] || { clw_digite_algo; continue; }
+                clw_ask "Link (https://...)" url || continue
+                [[ -n "${url// /}" ]] || { clw_digite_algo; continue; }
+                if clw_api_send POST "/api/admin/canais" \
+                    "$(jq -n --arg l "$lab" --arg u "$url" '{label:$l, url:$u}')"; then
+                    clw_ok "Canal adicionado."
+                else
+                    clw_err "$(clw_api_detail 'Não consegui adicionar.')"
+                fi
+                sleep 1 ;;
+            e)
+                ((n > 0)) || { clw_invalida; continue; }
+                clw_ask "Nº do canal para editar o link" sel || continue
+                { [[ "$sel" =~ ^[0-9]+$ ]] && ((10#$sel >= 1 && 10#$sel <= n)); } \
+                    || { clw_invalida; continue; }
+                clw_ask "Novo link" url || continue
+                [[ -n "${url// /}" ]] || { clw_digite_algo; continue; }
+                if clw_api_send PUT "/api/admin/canais/${ID[10#$sel - 1]}" \
+                    "$(jq -n --arg u "$url" '{url:$u}')"; then
+                    clw_ok "Link atualizado."
+                else
+                    clw_err "$(clw_api_detail 'Não consegui editar.')"
+                fi
+                sleep 1 ;;
+            r)
+                ((n > 0)) || { clw_invalida; continue; }
+                clw_ask "Nº do canal para remover" sel || continue
+                { [[ "$sel" =~ ^[0-9]+$ ]] && ((10#$sel >= 1 && 10#$sel <= n)); } \
+                    || { clw_invalida; continue; }
+                clw_ask "Remover \"${LB[10#$sel - 1]}\"? (s/n)" c || continue
+                [[ "${c,,}" == s* ]] || { clw_info "Cancelado."; sleep 1; continue; }
+                if clw_api_send DELETE "/api/admin/canais/${ID[10#$sel - 1]}"; then
+                    clw_ok "Canal removido."
+                else
+                    clw_err "$(clw_api_detail 'Não consegui remover.')"
+                fi
+                sleep 1 ;;
+            *) clw_invalida ;;
+        esac
+    done
+}
+
 clw_admin_menu() {
     local op
     while :; do
@@ -362,6 +471,7 @@ clw_admin_menu() {
         clw_item 07 "Remover usuário"
         clw_item 08 "Sessões ativas"
         clw_item 09 "Logs de auditoria"
+        clw_item 10 "Gerenciar canais"
         printf '\n'
         clw_item 98 "Retornar ao menu" "$C_RED"
         clw_item 99 "Sair do script" "$C_RED"
@@ -371,7 +481,7 @@ clw_admin_menu() {
             98) return 0 ;;
         esac
         clw_is_back "$op" && return 0
-        [[ "$op" =~ ^0?[1-9]$ ]] || { clw_invalida; continue; }
+        [[ "$op" =~ ^(0?[1-9]|10)$ ]] || { clw_invalida; continue; }
 
         clw_banner
         case "${op#0}" in
@@ -391,6 +501,7 @@ clw_admin_menu() {
                     && printf '%s' "$CLW_HTTP_BODY" | jq -r '.[] | "  \u001b[1;34m•\(.username) \u001b[0;32mip:\(.declared_ip // "-") | \(.user_agent // "-") | \(.created_at)\u001b[m"' ;;
             9) clw_api_get "/api/admin/logs?limit=50" \
                     && printf '%s' "$CLW_HTTP_BODY" | jq -r '.[] | "  \u001b[1;34m•\(.ts) \u001b[0;32m\(.action) | user:\(.user_id // "-") | \(.detail // "")\u001b[m"' ;;
+            10) clw_admin_canais || true ;;
         esac
         echo
         clw_retorne_menu || return 0
@@ -429,7 +540,7 @@ clw_main_menu() {
             95) clw_self_update manual          # 95 = atualização manual (com feedback, re-sync)
                 clw_load_profile || true; clw_load_modules || true ;;
             96) if [[ "$CLW_ROLE" == "admin" ]]; then clw_admin_menu; else clw_invalida; fi ;;
-            97) clw_banner; clw_info "Telegram: https://t.me/ClowntersPainelBot"; echo; clw_retorne_menu || true ;;
+            97) clw_canais_menu ;;
             98) clw_logout; clw_auth_ensure && { clw_load_profile || true; clw_load_modules || true; } || exit 0 ;;
             *)
                 if [[ "$op" =~ ^[0-9]+$ ]] && ((10#$op >= 1 && 10#$op <= ${#cats[@]})); then
